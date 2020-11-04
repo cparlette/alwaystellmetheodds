@@ -4,6 +4,9 @@ export(globals.MODULE_TYPE) var type
 var percentage = 90
 var moduleName = ""
 var changeAmount = 5
+var maxPercentage = 100
+
+signal module_change
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,14 +26,18 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
-	$PercentLabel.text = str(percentage) + " %"
+	$PercentLabel.text = str(percentage) + "% / " + str(maxPercentage) + "%"
 
 func _on_Plus_pressed():
-	if percentage <= (100 - changeAmount):
+	if percentage <= (maxPercentage - changeAmount) and globals.shipPowerCurrent < globals.shipPowerMax:
 		percentage += changeAmount
+		globals.shipPowerCurrent += 1
 		updateModuleUI()
+		emit_signal("module_change")
 
 func _on_Minus_pressed():
-	if percentage >= changeAmount:
+	if percentage >= changeAmount and globals.shipPowerCurrent > 0:
 		percentage -= changeAmount
+		globals.shipPowerCurrent -= 1
 		updateModuleUI()
+		emit_signal("module_change")

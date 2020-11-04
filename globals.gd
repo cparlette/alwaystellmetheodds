@@ -12,3 +12,6 @@ enum MODULE_TYPE {
 	HULL,
 	COMMUNICATIONS
 }
+
+var shipPowerMax = 10
+var shipPowerCurrent = 5

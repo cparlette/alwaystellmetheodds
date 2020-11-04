@@ -44,11 +44,11 @@ __meta__ = {
 }
 
 [node name="PercentLabel" type="Label" parent="."]
-margin_left = 110.0
+margin_left = 100.0
 margin_top = 68.0
-margin_right = 190.0
+margin_right = 200.0
 margin_bottom = 82.0
-text = "99 %"
+text = "99% / 100%"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

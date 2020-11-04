@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Module.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ShipPower.tscn" type="PackedScene" id=3]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,43 +15,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Engine" parent="." instance=ExtResource( 2 )]
+[node name="Modules" type="Node2D" parent="."]
+
+[node name="Engine" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 633.303
 margin_top = 13.8226
 margin_right = 933.303
 margin_bottom = 113.823
 
-[node name="Controls" parent="." instance=ExtResource( 2 )]
+[node name="Controls" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 634.717
 margin_top = 145.344
 margin_right = 934.717
 margin_bottom = 245.344
 type = 1
 
-[node name="Computer" parent="." instance=ExtResource( 2 )]
+[node name="Computer" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 634.01
 margin_top = 266.967
 margin_right = 934.01
 margin_bottom = 366.967
 type = 2
 
-[node name="Life Support" parent="." instance=ExtResource( 2 )]
+[node name="Life Support" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 955.744
 margin_top = 17.3581
 margin_right = 1255.74
 margin_bottom = 117.358
 type = 3
 
-[node name="Hull" parent="." instance=ExtResource( 2 )]
+[node name="Hull" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 960.693
 margin_top = 144.637
 margin_right = 1260.69
 margin_bottom = 244.637
 type = 4
 
-[node name="Communications" parent="." instance=ExtResource( 2 )]
+[node name="Communications" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 959.986
 margin_top = 265.553
 margin_right = 1259.99
 margin_bottom = 365.553
 type = 5
+
+[node name="ShipPower" parent="." instance=ExtResource( 3 )]
+margin_left = 563.582
+margin_top = 397.923
+margin_right = 1263.58
+margin_bottom = 497.923
