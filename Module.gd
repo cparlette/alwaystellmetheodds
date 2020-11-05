@@ -7,6 +7,7 @@ var changeAmount = 5
 var maxPercentage = 100
 
 signal module_change
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,3 +42,11 @@ func _on_Minus_pressed():
 		globals.shipPowerCurrent -= 1
 		updateModuleUI()
 		emit_signal("module_change")
+
+func causeDamage(damageAmount):
+	maxPercentage -= damageAmount
+	if percentage > maxPercentage:
+		percentage = maxPercentage
+	updateModuleUI()
+	if maxPercentage == 0:
+		emit_signal("game_over")

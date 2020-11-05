@@ -15,3 +15,5 @@ enum MODULE_TYPE {
 
 var shipPowerMax = 10
 var shipPowerCurrent = 5
+
+var roundNumber = 1
