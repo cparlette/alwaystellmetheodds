@@ -1,0 +1,40 @@
+20201101 - GitHubGameOff2020 Brainstorming
+
+The theme for this year’s Game Off is MOONSHOT. 
+
+moonshot – noun
+	- an extremely ambitious and innovative project
+	- the act of launching a spacecraft to the moon
+	- a hit or thrown ball that travels a great distance with a high trajectory
+
+moonshot thinking – noun
+	- a type of thinking that aims to achieve something that is generally believed to be impossible. It encourages “anything is possible” dialogues around how to solve the challenge.
+
+Use “moonshot thinking” and interpret the theme however you like. Let it be the inspiration for your creation. If you need some ideas think about:
+	- A roguelite, lunar lander style game where you literally get one shot at landing on the moon
+	- A platform game, where the hero jumps across the surface of the moon firing shots at the enemy
+	- A game about traveling back in time to make an impactful change
+	- A game about solving a huge/world problem with some ridiculous technology
+
+Let your imagination run wild and create a game loosely based or inspired by the Moonshot theme using whatever game engines, libraries or languages you prefer before December 1, 13:37 PT. Work alone or as a team. Most importantly, have fun!
+
+
+
+
+1. CTF game based on the moon
+2. Oregon Trail style game about a moon mission
+
+
+
+random thoughts:
+- "always tell me the odds"
+- "moon's hot"
+
+
+
+types of 2d games:
+- capture the flag
+- city builder
+- tycoon
+- card game
+- board game
