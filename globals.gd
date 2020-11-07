@@ -13,6 +13,13 @@ enum MODULE_TYPE {
 	COMMUNICATIONS
 }
 
+enum CREW_NAMES {
+	Ann,
+	Bob,
+	Chad,
+	Deb
+}
+
 var shipPowerMax = 10
 var shipPowerCurrent = 5
 

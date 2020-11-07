@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Module.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ShipPower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Crew.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -57,6 +58,43 @@ margin_top = 265.553
 margin_right = 1259.99
 margin_bottom = 365.553
 type = 5
+
+[node name="Crew" type="Control" parent="."]
+margin_left = 20.0
+margin_top = 500.0
+margin_right = 330.0
+margin_bottom = 650.0
+rect_min_size = Vector2( 310, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ann" parent="Crew" instance=ExtResource( 4 )]
+margin_right = 0.0
+margin_bottom = 0.0
+rect_min_size = Vector2( 150, 70 )
+
+[node name="Bob" parent="Crew" instance=ExtResource( 4 )]
+margin_left = 160.0
+margin_right = 160.0
+margin_bottom = 0.0
+rect_min_size = Vector2( 150, 70 )
+crewNameInput = 1
+
+[node name="Chad" parent="Crew" instance=ExtResource( 4 )]
+margin_top = 80.0
+margin_right = 0.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 70 )
+crewNameInput = 2
+
+[node name="Deb" parent="Crew" instance=ExtResource( 4 )]
+margin_left = 160.0
+margin_top = 80.0
+margin_right = 160.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 70 )
+crewNameInput = 3
 
 [node name="ShipPower" parent="." instance=ExtResource( 3 )]
 margin_left = 563.582
