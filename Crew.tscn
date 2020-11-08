@@ -37,3 +37,4 @@ selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="item_selected" from="Assignment" to="." method="_on_Assignment_item_selected"]

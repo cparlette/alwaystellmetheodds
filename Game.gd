@@ -8,6 +8,9 @@ func _ready():
 	for child in $Modules.get_children():
 		child.connect("module_change", self, "updatePower")
 		child.connect("game_over", self, "gameOver")
+	for person in $Crew.get_children():
+		person.connect("crew_choice", self, "newCrewChoice")
+	newCrewChoice()
 
 
 func _input(event):
@@ -27,7 +30,7 @@ func newRound():
 	globals.roundNumber += 1
 	for module in $Modules.get_children():
 		var randomNumber = rng.randi_range(0,100)
-		if randomNumber > module.percentage:
+		if randomNumber > (module.percentage + module.bonus):
 			# Failure, so cause damage
 			module.causeDamage(5)
 			newText += "ALERT: Module "+module.moduleName+" took 5 damage!\n"
@@ -38,3 +41,14 @@ func newRound():
 
 func gameOver():
 	get_tree().change_scene("GameOver.tscn")
+
+
+func newCrewChoice():
+	for module in $Modules.get_children():
+		module.bonus = 0
+	for person in $Crew.get_children():
+		var changedModule = $Modules.get_child(person.crewChoice)
+		changedModule.bonus += 10
+	for module in $Modules.get_children():
+		module.updateModuleUI()
+	

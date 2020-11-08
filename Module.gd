@@ -5,6 +5,7 @@ var percentage = 90
 var moduleName = ""
 var changeAmount = 5
 var maxPercentage = 100
+var bonus = 0
 
 signal module_change
 signal game_over
@@ -27,7 +28,10 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
-	$PercentLabel.text = str(percentage) + "% / " + str(maxPercentage) + "%"
+	if bonus > 0:
+		$PercentLabel.text = str(percentage) + "% + " + str(bonus) + " % / " + str(maxPercentage) + "%"
+	else:
+		$PercentLabel.text = str(percentage) + "% / " + str(maxPercentage) + "%"
 
 func _on_Plus_pressed():
 	if percentage <= (maxPercentage - changeAmount) and globals.shipPowerCurrent < globals.shipPowerMax:
