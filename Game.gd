@@ -22,7 +22,13 @@ func updatePower():
 
 
 func _on_NewRoundButton_pressed():
+	randomEvent()
+
+func randomEvent():
+	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
+	print("event number was ",randomEventNumber)
 	newRound()
+	
 
 
 func newRound():

@@ -108,6 +108,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="OptionA" type="Button" parent="."]
+margin_left = 955.377
+margin_top = 542.351
+margin_right = 1024.38
+margin_bottom = 562.351
+text = "Option A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionB" type="Button" parent="."]
+margin_left = 951.134
+margin_top = 620.132
+margin_right = 1020.13
+margin_bottom = 640.132
+text = "Option B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Output" type="Control" parent="."]
 margin_left = 20.0
 margin_top = 20.0
