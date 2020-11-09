@@ -29,18 +29,19 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
-	var newText = str(percentage) + "% "
+	var newText = "[center]" + str(percentage) + "% "
 	if bonus > 0:
-		newText += " + " + str(bonus) + " % / "
+		newText += "[color=lime] + " + str(bonus) + " %[/color] / "
 	else:
 		newText += "/ "
 	newText += str(maxPercentage) + "%"
 	if repair > 0 and maxPercentage < 100:
 		if repair + maxPercentage >= 100:
-			newText += " + " + str((100 - maxPercentage)) + "%"
+			newText += "[color=lime] + " + str((100 - maxPercentage)) + "%[/color]"
 		else:
-			newText += " + " + str(repair) + "%"
-	$PercentLabel.text = newText
+			newText += "[color=lime] + " + str(repair) + "%[/color]"
+	newText += "[/center]"
+	$PercentLabel.bbcode_text = newText
 
 func _on_Plus_pressed():
 	if percentage <= (maxPercentage - changeAmount) and globals.shipPowerCurrent < globals.shipPowerMax:
