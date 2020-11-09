@@ -11,9 +11,10 @@ const choices = {
 	5: "Communications"
 }
 
-var crewChoice = 0
+var moduleAssigned = 0
+var taskAssigned = 0
 
-signal crew_choice
+signal crew_AssignmentChanged
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +29,11 @@ func _ready():
 	$NameLabel.text = crewName
 
 
-func _on_Assignment_item_selected(index):
-	crewChoice = index
-	emit_signal("crew_choice")
+func _on_ModuleOption_item_selected(index):
+	moduleAssigned = index
+	emit_signal("crew_AssignmentChanged")
+
+
+func _on_TaskOption_item_selected(index):
+	taskAssigned = index
+	emit_signal("crew_AssignmentChanged")

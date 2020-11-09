@@ -3,8 +3,8 @@
 [ext_resource path="res://Crew.gd" type="Script" id=1]
 
 [node name="Crew" type="Control"]
-margin_right = 150.0
-margin_bottom = 70.0
+margin_right = 200.0
+margin_bottom = 100.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,17 +19,17 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="."]
-margin_left = 25.0
+margin_left = 50.0
 margin_top = 10.0
-margin_right = 125.0
+margin_right = 150.0
 margin_bottom = 24.0
 text = "Crew Name"
 align = 1
 
-[node name="Assignment" type="OptionButton" parent="."]
+[node name="ModuleOption" type="OptionButton" parent="."]
 margin_left = 25.0
 margin_top = 40.0
-margin_right = 125.0
+margin_right = 175.0
 margin_bottom = 60.0
 text = "Engine"
 items = [ "Engine", null, false, 0, null, "Controls", null, false, 1, null, "Computer", null, false, 2, null, "Life Support", null, false, 3, null, "Hull", null, false, 4, null, "Communications", null, false, 5, null ]
@@ -37,4 +37,14 @@ selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="item_selected" from="Assignment" to="." method="_on_Assignment_item_selected"]
+
+[node name="TaskOption" type="OptionButton" parent="."]
+margin_left = 50.0
+margin_top = 70.0
+margin_right = 150.0
+margin_bottom = 90.0
+text = "Boost"
+items = [ "Boost", null, false, 0, null, "Repair", null, false, 1, null ]
+selected = 0
+[connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
+[connection signal="item_selected" from="TaskOption" to="." method="_on_TaskOption_item_selected"]

@@ -1,11 +1,12 @@
 extends Control
 
 export(globals.MODULE_TYPE) var type
-var percentage = 90
+var percentage = 50
 var moduleName = ""
 var changeAmount = 5
 var maxPercentage = 100
 var bonus = 0
+var repair = 0
 
 signal module_change
 signal game_over
@@ -28,10 +29,18 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
+	var newText = str(percentage) + "% "
 	if bonus > 0:
-		$PercentLabel.text = str(percentage) + "% + " + str(bonus) + " % / " + str(maxPercentage) + "%"
+		newText += " + " + str(bonus) + " % / "
 	else:
-		$PercentLabel.text = str(percentage) + "% / " + str(maxPercentage) + "%"
+		newText += "/ "
+	newText += str(maxPercentage) + "%"
+	if repair > 0 and maxPercentage < 100:
+		if repair + maxPercentage >= 100:
+			newText += " + " + str((100 - maxPercentage)) + "%"
+		else:
+			newText += " + " + str(repair) + "%"
+	$PercentLabel.text = newText
 
 func _on_Plus_pressed():
 	if percentage <= (maxPercentage - changeAmount) and globals.shipPowerCurrent < globals.shipPowerMax:
