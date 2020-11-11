@@ -46,7 +46,15 @@ func newRound():
 	newText += " - Distance to " + globals.destinationMoon + ": " + str(globals.destinationTotalDistance - globals.distanceTraveled) + " million miles\n\n"
 	if currentEvent['text']:
 		newText += resolveEvent()
+	for module in $Modules.get_children():
+		if module.repair > 0 and module.health < 100:
+			newText += "REPAIR: Module "+module.moduleName+" has been repaired!\n"
+			module.health += module.repair
+			if module.health > 100:
+				module.health = 100
+		module.updateModuleUI()
 	$NewRoundOutput/OutputText.text = newText
+	# get a new event
 	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
 	currentEvent = globals.randomEvents[randomEventNumber]
 	currentEventOdds = currentEvent['startingOdds']
@@ -55,12 +63,12 @@ func newRound():
 func resolveEvent():
 	var randomNumber = rng.randi_range(0,100)
 	if randomNumber <= currentEventOdds:
-		return "No damage taken this round"
+		return "No damage taken this round\n"
 	else:
 		var affectedModule = $Modules.get_child(currentEvent['failure']['moduleId'])
-		affectedModule.health -= (randomNumber - currentEventOdds)
-		affectedModule.updateModuleUI()
-		return (currentEvent['failure']['failText'] + str(randomNumber - currentEventOdds))
+		var damageTotal = randomNumber - currentEventOdds
+		affectedModule.causeDamage(damageTotal)
+		return (currentEvent['failure']['failText'] + str(damageTotal)) + "\n"
 	
 
 func updateEventOutput():
@@ -72,34 +80,6 @@ func updateEventOutput():
 		newEventText += "Current Odds: " + str(currentEventOdds)
 		$EventOutput/OutputText.text = newEventText
 
-func randomEvent():
-	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
-	print("event number was ",randomEventNumber)
-	old_newRound()
-	
-
-
-func old_newRound():
-	var newText = "Starting round " + str(globals.roundNumber) + "\n\n"
-	globals.roundNumber += 1
-	print(globals.roundNumber, " - moduleName, percentage, maxPercentage, bonus, repair, randomNumber")
-	for module in $Modules.get_children():
-		var randomNumber = rng.randi_range(0,100)
-		print("  ", module.moduleName, " ", module.percentage, " ", module.maxPercentage, " ", module.bonus, " ", module.repair, " ", randomNumber)
-		if randomNumber > (module.percentage + module.bonus):
-			# Failure, so cause damage
-			module.causeDamage(5)
-			newText += "ALERT: Module "+module.moduleName+" took 5 damage!\n"
-		else:
-			newText += "Module "+module.moduleName+" is fine!\n"
-		if module.repair > 0 and module.maxPercentage < 100:
-			newText += "REPAIR: Module "+module.moduleName+" has been repaired!\n"
-			module.maxPercentage += module.repair
-			if module.maxPercentage > 100:
-				module.maxPercentage = 100
-		module.updateModuleUI()
-	$Output/OutputText.text = newText
-	
 
 func gameOver():
 	get_tree().change_scene("GameOver.tscn")

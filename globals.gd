@@ -31,14 +31,14 @@ var destinationMoon = "Ganymede"
 var randomEvents = {
 	0: {
 		"text": "Sir, we are approaching an asteroid belt.  Routing power or crew to the controls should help us navigate better.  If any of those rocks hit us, we're going to take some damage",
-		"helpingModule": 1,
+		"helpingModule": MODULE_TYPE.CONTROLS,
 		"startingOdds": 50,
-		"failure": {"moduleId": 4, "failText": "ALERT: Asteroids strike the hull, damage = "}
+		"failure": {"moduleId": MODULE_TYPE.HULL, "failText": "ALERT: Asteroids strike the hull, damage = "}
 	},
 	1: {
 		"text": "The computer is showing inconsistencies in our life support system.  The computer can fix it, but it needs power or human help.",
-		"helpingModule": 2,
+		"helpingModule": MODULE_TYPE.COMPUTER,
 		"startingOdds": 50,
-		"failure": {"moduleId": 3, "failText": "ALERT: Life Support system failure, damage = "}
+		"failure": {"moduleId": MODULE_TYPE.LIFE_SUPPORT, "failText": "ALERT: Life Support system failure, damage = "}
 	},
 }
