@@ -1,6 +1,7 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
+var distanceThisRound = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 	for person in $Crew.get_children():
 		person.connect("crew_AssignmentChanged", self, "newCrewModuleAssigned")
 	newCrewModuleAssigned()
+	updatePower()
 
 
 func _input(event):
@@ -19,19 +21,31 @@ func _input(event):
 
 func updatePower():
 	$ShipPower.refreshPowerIndicators()
+	distanceThisRound = $Modules/Engine.power + $Modules/Engine.bonus
 
 
 func _on_NewRoundButton_pressed():
-	randomEvent()
+	newRound()
+
+func newRound():
+	var newText = "Starting round " + str(globals.roundNumber) + "\n\n"
+	globals.roundNumber += 1
+	globals.distanceTraveled += distanceThisRound
+	if globals.distanceTraveled > globals.destinationTotalDistance:
+		gameOver()
+	newText += " - Distance traveled this round: " + str(distanceThisRound) + " million miles\n"
+	newText += " - Distance traveled so far: " + str(globals.distanceTraveled) + " million miles\n"
+	newText += " - Distance to " + globals.destinationMoon + ": " + str(globals.destinationTotalDistance - globals.distanceTraveled) + " million miles\n\n"
+	$Output/OutputText.text = newText
 
 func randomEvent():
 	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
 	print("event number was ",randomEventNumber)
-	newRound()
+	old_newRound()
 	
 
 
-func newRound():
+func old_newRound():
 	var newText = "Starting round " + str(globals.roundNumber) + "\n\n"
 	globals.roundNumber += 1
 	print(globals.roundNumber, " - moduleName, percentage, maxPercentage, bonus, repair, randomNumber")

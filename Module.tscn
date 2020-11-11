@@ -45,12 +45,14 @@ __meta__ = {
 
 [node name="PercentLabel" type="RichTextLabel" parent="."]
 margin_left = 50.0
-margin_top = 68.0
+margin_top = 60.0
 margin_right = 250.0
-margin_bottom = 82.0
+margin_bottom = 88.0
 bbcode_enabled = true
-bbcode_text = "99% / 100%"
-text = "99% / 100%"
+bbcode_text = "Power: 0%
+Health: 100%"
+text = "Power: 0%
+Health: 100%"
 scroll_active = false
 [connection signal="pressed" from="Plus" to="." method="_on_Plus_pressed"]
 [connection signal="pressed" from="Minus" to="." method="_on_Minus_pressed"]

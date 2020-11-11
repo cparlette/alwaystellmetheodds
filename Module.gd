@@ -1,10 +1,10 @@
 extends Control
 
 export(globals.MODULE_TYPE) var type
-var percentage = 50
+var power = 0
 var moduleName = ""
 var changeAmount = 5
-var maxPercentage = 100
+var health = 100
 var bonus = 0
 var repair = 0
 
@@ -29,38 +29,36 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
-	var newText = "[center]" + str(percentage) + "% "
+	var newText = "[center]Power: " + str(power) + "% "
 	if bonus > 0:
-		newText += "[color=lime] + " + str(bonus) + " %[/color] / "
+		newText += "[color=lime] + " + str(bonus) + " %[/color] \n "
 	else:
-		newText += "/ "
-	newText += str(maxPercentage) + "%"
-	if repair > 0 and maxPercentage < 100:
-		if repair + maxPercentage >= 100:
-			newText += "[color=lime] + " + str((100 - maxPercentage)) + "%[/color]"
+		newText += "\n "
+	newText += "Health: " + str(health) + "%"
+	if repair > 0 and health < 100:
+		if repair + health >= 100:
+			newText += "[color=lime] + " + str((100 - health)) + "%[/color]"
 		else:
 			newText += "[color=lime] + " + str(repair) + "%[/color]"
 	newText += "[/center]"
 	$PercentLabel.bbcode_text = newText
 
 func _on_Plus_pressed():
-	if percentage <= (maxPercentage - changeAmount) and globals.shipPowerCurrent < globals.shipPowerMax:
-		percentage += changeAmount
+	if globals.shipPowerCurrent < globals.shipPowerMax:
+		power += changeAmount
 		globals.shipPowerCurrent += 1
 		updateModuleUI()
 		emit_signal("module_change")
 
 func _on_Minus_pressed():
-	if percentage >= changeAmount and globals.shipPowerCurrent > 0:
-		percentage -= changeAmount
+	if power >= changeAmount and globals.shipPowerCurrent > 0:
+		power -= changeAmount
 		globals.shipPowerCurrent -= 1
 		updateModuleUI()
 		emit_signal("module_change")
 
 func causeDamage(damageAmount):
-	maxPercentage -= damageAmount
-	if percentage > maxPercentage:
-		percentage = maxPercentage
+	health -= damageAmount
 	updateModuleUI()
-	if maxPercentage == 0:
+	if health == 0:
 		emit_signal("game_over")

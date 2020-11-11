@@ -21,9 +21,12 @@ enum CREW_NAMES {
 }
 
 var shipPowerMax = 10
-var shipPowerCurrent = 5
+var shipPowerCurrent = 0
 
 var roundNumber = 1
+var distanceTraveled = 0
+var destinationTotalDistance = 390.4
+var destinationMoon = "Ganymede"
 
 var randomEvents = {
 	0: {
