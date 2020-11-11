@@ -108,36 +108,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionA" type="Button" parent="."]
-margin_left = 82.8073
-margin_top = 446.891
-margin_right = 151.807
-margin_bottom = 466.891
-text = "Option A"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OptionB" type="Button" parent="."]
-margin_left = 251.806
-margin_top = 447.598
-margin_right = 320.806
-margin_bottom = 467.598
-text = "Option B"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Output" type="Control" parent="."]
+[node name="NewRoundOutput" type="Control" parent="."]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 420.0
-margin_bottom = 420.0
+margin_bottom = 220.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OutputBG" type="ColorRect" parent="Output"]
+[node name="OutputBG" type="ColorRect" parent="NewRoundOutput"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
@@ -145,9 +125,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OutputText" type="Label" parent="Output"]
+[node name="OutputText" type="Label" parent="NewRoundOutput"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EventOutput" type="Control" parent="."]
+margin_left = 20.0
+margin_top = 240.0
+margin_right = 420.0
+margin_bottom = 440.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutputBG" type="ColorRect" parent="EventOutput"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutputText" type="Label" parent="EventOutput"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

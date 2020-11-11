@@ -2,6 +2,13 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 var distanceThisRound = 0
+var currentEvent = {
+		"text": "",
+		"helpingModule": 1,
+		"startingOdds": 50,
+		"failure": {"moduleId": 4, "failText": ""}
+	}
+var currentEventOdds = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +29,7 @@ func _input(event):
 func updatePower():
 	$ShipPower.refreshPowerIndicators()
 	distanceThisRound = $Modules/Engine.power + $Modules/Engine.bonus
+	updateEventOutput()
 
 
 func _on_NewRoundButton_pressed():
@@ -36,7 +44,33 @@ func newRound():
 	newText += " - Distance traveled this round: " + str(distanceThisRound) + " million miles\n"
 	newText += " - Distance traveled so far: " + str(globals.distanceTraveled) + " million miles\n"
 	newText += " - Distance to " + globals.destinationMoon + ": " + str(globals.destinationTotalDistance - globals.distanceTraveled) + " million miles\n\n"
-	$Output/OutputText.text = newText
+	if currentEvent['text']:
+		newText += resolveEvent()
+	$NewRoundOutput/OutputText.text = newText
+	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
+	currentEvent = globals.randomEvents[randomEventNumber]
+	currentEventOdds = currentEvent['startingOdds']
+	updateEventOutput()
+
+func resolveEvent():
+	var randomNumber = rng.randi_range(0,100)
+	if randomNumber <= currentEventOdds:
+		return "No damage taken this round"
+	else:
+		var affectedModule = $Modules.get_child(currentEvent['failure']['moduleId'])
+		affectedModule.health -= (randomNumber - currentEventOdds)
+		affectedModule.updateModuleUI()
+		return (currentEvent['failure']['failText'] + str(randomNumber - currentEventOdds))
+	
+
+func updateEventOutput():
+	if currentEvent['text']:
+		var newEventText = currentEvent['text'] + "\n\n"
+		currentEventOdds = currentEvent['startingOdds']
+		var helpingModule = $Modules.get_child(currentEvent['helpingModule'])
+		currentEventOdds += (helpingModule.power + helpingModule.bonus)
+		newEventText += "Current Odds: " + str(currentEventOdds)
+		$EventOutput/OutputText.text = newEventText
 
 func randomEvent():
 	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
@@ -83,4 +117,5 @@ func newCrewModuleAssigned():
 			changedModule.repair += 10
 	for module in $Modules.get_children():
 		module.updateModuleUI()
+	updateEventOutput()
 	
