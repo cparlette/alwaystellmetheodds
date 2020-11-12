@@ -15,47 +15,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Modules" type="Node2D" parent="."]
+[node name="Modules" type="Control" parent="."]
+margin_left = 850.0
+margin_top = 380.0
+margin_right = 1260.0
+margin_bottom = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Engine" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 633.303
-margin_top = 13.8226
-margin_right = 933.303
-margin_bottom = 113.823
 
 [node name="Controls" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 634.717
-margin_top = 145.344
-margin_right = 934.717
-margin_bottom = 245.344
+margin_top = 110.0
+margin_bottom = 210.0
 type = 1
 
 [node name="Computer" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 634.01
-margin_top = 266.967
-margin_right = 934.01
-margin_bottom = 366.967
+margin_top = 220.0
+margin_bottom = 320.0
 type = 2
 
 [node name="Life Support" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 955.744
-margin_top = 17.3581
-margin_right = 1255.74
-margin_bottom = 117.358
+margin_left = 210.0
+margin_right = 410.0
 type = 3
 
 [node name="Hull" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 960.693
-margin_top = 144.637
-margin_right = 1260.69
-margin_bottom = 244.637
+margin_left = 210.0
+margin_top = 110.0
+margin_right = 410.0
+margin_bottom = 210.0
 type = 4
 
 [node name="Communications" parent="Modules" instance=ExtResource( 2 )]
-margin_left = 959.986
-margin_top = 265.553
-margin_right = 1259.99
-margin_bottom = 365.553
+margin_left = 210.0
+margin_top = 220.0
+margin_right = 410.0
+margin_bottom = 320.0
 type = 5
 
 [node name="Crew" type="Control" parent="."]
@@ -127,10 +124,10 @@ __meta__ = {
 }
 
 [node name="EventOutput" type="Control" parent="."]
-margin_left = 20.0
-margin_top = 240.0
-margin_right = 420.0
-margin_bottom = 440.0
+margin_left = 860.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 220.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

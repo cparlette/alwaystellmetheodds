@@ -3,7 +3,7 @@
 [ext_resource path="res://Module.gd" type="Script" id=1]
 
 [node name="Module" type="Control"]
-margin_right = 300.0
+margin_right = 200.0
 margin_bottom = 100.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -19,9 +19,9 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="."]
-margin_left = 110.0
+margin_left = 25.0
 margin_top = 10.0
-margin_right = 190.0
+margin_right = 175.0
 margin_bottom = 24.0
 text = "Module"
 align = 1
@@ -30,9 +30,9 @@ __meta__ = {
 }
 
 [node name="PercentLabel" type="RichTextLabel" parent="."]
-margin_left = 50.0
+margin_left = 25.0
 margin_top = 60.0
-margin_right = 250.0
+margin_right = 175.0
 margin_bottom = 88.0
 bbcode_enabled = true
 bbcode_text = "Boost: 0%
