@@ -18,20 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Plus" type="Button" parent="."]
-margin_left = 260.0
-margin_top = 60.0
-margin_right = 290.0
-margin_bottom = 90.0
-text = "+"
-
-[node name="Minus" type="Button" parent="."]
-margin_left = 10.0
-margin_top = 60.0
-margin_right = 40.0
-margin_bottom = 90.0
-text = "-"
-
 [node name="NameLabel" type="Label" parent="."]
 margin_left = 110.0
 margin_top = 10.0
@@ -49,10 +35,11 @@ margin_top = 60.0
 margin_right = 250.0
 margin_bottom = 88.0
 bbcode_enabled = true
-bbcode_text = "Power: 0%
+bbcode_text = "Boost: 0%
 Health: 100%"
-text = "Power: 0%
+text = "Boost: 0%
 Health: 100%"
 scroll_active = false
-[connection signal="pressed" from="Plus" to="." method="_on_Plus_pressed"]
-[connection signal="pressed" from="Minus" to="." method="_on_Minus_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}

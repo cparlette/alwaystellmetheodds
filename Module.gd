@@ -1,14 +1,12 @@
 extends Control
 
 export(globals.MODULE_TYPE) var type
-var power = 0
 var moduleName = ""
 var changeAmount = 5
 var health = 100
-var bonus = 0
+var boost = 0
 var repair = 0
 
-signal module_change
 signal game_over
 
 # Called when the node enters the scene tree for the first time.
@@ -29,11 +27,11 @@ func _ready():
 	updateModuleUI()
 
 func updateModuleUI():
-	var newText = "[center]Power: " + str(power) + "% "
-	if bonus > 0:
-		newText += "[color=lime] + " + str(bonus) + " %[/color] \n "
+	var newText = "[center]Boost: "
+	if boost == 0:
+		newText += "0%\n"
 	else:
-		newText += "\n "
+		newText += "[color=lime] +" + str(boost) + " %[/color] \n "
 	newText += "Health: " + str(health) + "%"
 	if repair > 0 and health < 100:
 		if repair + health >= 100:
@@ -43,19 +41,6 @@ func updateModuleUI():
 	newText += "[/center]"
 	$PercentLabel.bbcode_text = newText
 
-func _on_Plus_pressed():
-	if globals.shipPowerCurrent < globals.shipPowerMax:
-		power += changeAmount
-		globals.shipPowerCurrent += 1
-		updateModuleUI()
-		emit_signal("module_change")
-
-func _on_Minus_pressed():
-	if power >= changeAmount and globals.shipPowerCurrent > 0:
-		power -= changeAmount
-		globals.shipPowerCurrent -= 1
-		updateModuleUI()
-		emit_signal("module_change")
 
 func causeDamage(damageAmount):
 	health -= damageAmount
