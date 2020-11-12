@@ -13,6 +13,9 @@ const choices = {
 
 var moduleAssigned = 0
 var taskAssigned = 0
+var xp = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+var level = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+
 
 signal crew_AssignmentChanged
 
@@ -37,3 +40,21 @@ func _on_ModuleOption_item_selected(index):
 func _on_TaskOption_item_selected(index):
 	taskAssigned = index
 	emit_signal("crew_AssignmentChanged")
+
+func raiseXP(xpGained):
+	xp[moduleAssigned] += xpGained
+	if xp[moduleAssigned] >= globals.xpLevels[level[moduleAssigned] + 1]:
+		level[moduleAssigned] += 1
+	updateCrewUI()
+
+func updateCrewUI():
+	var newCrewUItext = "Engine: " + str(level[0]) + "\n"
+	newCrewUItext += "Controls: " + str(level[1]) + "\n"
+	newCrewUItext += "Comp: " + str(level[2]) + "\n"
+	newCrewUItext += "Life Sup: " + str(level[3]) + "\n"
+	newCrewUItext += "Hull: " + str(level[4]) + "\n"
+	newCrewUItext += "Comms: " + str(level[5]) + "\n"
+	$XPLevel.text = newCrewUItext
+
+func getLevel(moduleID):
+	return level[moduleID]

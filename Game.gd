@@ -17,6 +17,7 @@ func _ready():
 		child.connect("game_over", self, "gameOver")
 	for person in $Crew.get_children():
 		person.connect("crew_AssignmentChanged", self, "newCrewModuleAssigned")
+		person.updateCrewUI()
 	newCrewModuleAssigned()
 	#updatePower()
 	var initialText = "As you begin your journey to " + globals.destinationMoon
@@ -53,6 +54,11 @@ func newRound():
 				module.health = 100
 		module.updateModuleUI()
 	$NewRoundOutput/OutputText.text = newText
+	# Add xp to crew
+	for person in $Crew.get_children():
+		person.raiseXP(5)
+	# update everything after XP given
+	newCrewModuleAssigned()
 	# get a new event
 	var randomEventNumber = rng.randi_range(0,globals.randomEvents.size() - 1)
 	currentEvent = globals.randomEvents[randomEventNumber]
@@ -90,10 +96,11 @@ func newCrewModuleAssigned():
 		module.repair = 0
 	for person in $Crew.get_children():
 		var changedModule = $Modules.get_child(person.moduleAssigned)
+		var changeAmount = (10 * (person.getLevel(person.moduleAssigned) + 1))
 		if person.taskAssigned == 0:
-			changedModule.boost += 10
+			changedModule.boost += changeAmount
 		elif person.taskAssigned == 1:
-			changedModule.repair += 10
+			changedModule.repair += changeAmount
 	for module in $Modules.get_children():
 		module.updateModuleUI()
 	calculateDistanceThisRound()

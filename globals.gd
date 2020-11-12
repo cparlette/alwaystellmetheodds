@@ -20,6 +20,18 @@ enum CREW_NAMES {
 	Deb
 }
 
+const xpLevels = {
+	0: 0,
+	1: 5,
+	2: 10,
+	3: 15,
+	4: 20,
+	5: 40,
+	6: 100,
+	7: 200,
+	8: 500
+}
+
 var shipPowerMax = 10
 var shipPowerCurrent = 0
 

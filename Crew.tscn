@@ -3,7 +3,7 @@
 [ext_resource path="res://Crew.gd" type="Script" id=1]
 
 [node name="Crew" type="Control"]
-margin_right = 200.0
+margin_right = 300.0
 margin_bottom = 100.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -46,5 +46,16 @@ margin_bottom = 90.0
 text = "Boost"
 items = [ "Boost", null, false, 0, null, "Repair", null, false, 1, null ]
 selected = 0
+
+[node name="XPLevel" type="Label" parent="."]
+margin_left = 200.0
+margin_right = 300.0
+margin_bottom = 100.0
+text = "0: 0
+1: 0
+2: 0
+3: 0
+4: 0
+5: 0"
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
 [connection signal="item_selected" from="TaskOption" to="." method="_on_TaskOption_item_selected"]
