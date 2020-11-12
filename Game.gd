@@ -20,6 +20,11 @@ func _ready():
 		person.connect("crew_AssignmentChanged", self, "newCrewModuleAssigned")
 	newCrewModuleAssigned()
 	updatePower()
+	var initialText = "As you begin your journey to " + globals.destinationMoon
+	initialText += ", you ask the computer to calculate the odds of a successful mission.  Judging by the distance of " + str(globals.destinationTotalDistance)
+	initialText += " million miles, the computer reads a 1% overall success rate.\n\n"
+	initialText += "Time to assign the crew to their initial tasks and start the journey."
+	$NewRoundOutput/OutputText.text = initialText
 
 
 func _input(event):
