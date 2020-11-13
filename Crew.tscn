@@ -3,7 +3,7 @@
 [ext_resource path="res://Crew.gd" type="Script" id=1]
 
 [node name="Crew" type="Control"]
-margin_right = 300.0
+margin_right = 250.0
 margin_bottom = 100.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -13,7 +13,7 @@ __meta__ = {
 [node name="CrewBG" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.545098, 0.572549, 0.00784314, 1 )
+color = Color( 0.219608, 0.223529, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,9 +27,9 @@ text = "Crew Name"
 align = 1
 
 [node name="ModuleOption" type="OptionButton" parent="."]
-margin_left = 25.0
+margin_left = 10.0
 margin_top = 40.0
-margin_right = 175.0
+margin_right = 160.0
 margin_bottom = 60.0
 text = "Engine"
 items = [ "Engine", null, false, 0, null, "Controls", null, false, 1, null, "Computer", null, false, 2, null, "Life Support", null, false, 3, null, "Hull", null, false, 4, null, "Communications", null, false, 5, null ]
@@ -48,14 +48,14 @@ items = [ "Boost", null, false, 0, null, "Repair", null, false, 1, null ]
 selected = 0
 
 [node name="XPLevel" type="Label" parent="."]
-margin_left = 200.0
-margin_right = 300.0
+margin_left = 170.0
+margin_right = 240.0
 margin_bottom = 100.0
-text = "0: 0
-1: 0
-2: 0
-3: 0
-4: 0
-5: 0"
+text = "Engine: 0
+Controls: 0
+Comp: 0
+Life Sup: 0
+Hull: 0
+Comms: 0"
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
 [connection signal="item_selected" from="TaskOption" to="." method="_on_TaskOption_item_selected"]
