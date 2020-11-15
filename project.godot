@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Always Tell Me The Odds"
 run/main_scene="res://MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://graphics/logo-v1.png"
+config/windows_native_icon="res://graphics/logo-v1.ico"
 
 [autoload]
 
