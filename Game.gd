@@ -79,11 +79,19 @@ func resolveEvent():
 
 func updateEventOutput():
 	if currentEvent['text']:
-		var newEventText = currentEvent['text'] + "\n\n"
-		currentEventOdds = currentEvent['startingOdds']
-		var helpingModule = $Modules.get_child(currentEvent['helpingModule'])
-		currentEventOdds += helpingModule.boost
-		newEventText += "Current Odds: " + str(currentEventOdds)
+		# Damaged sensors reduces event output
+		var newEventText = ""
+		if $Modules/Sensors.health < 33:
+			newEventText += "ERROR: Event information unavailable due to damaged sensors!"
+		else:
+			newEventText += currentEvent['text'] + "\n\n"
+			currentEventOdds = currentEvent['startingOdds']
+			var helpingModule = $Modules.get_child(currentEvent['helpingModule'])
+			currentEventOdds += helpingModule.boost
+			if $Modules/Sensors.health > 66:
+				newEventText += "Current Odds: " + str(currentEventOdds)
+			else:
+				newEventText += "WARNING: Current odds unavailable due to damaged sensors!"
 		$EventOutput/OutputText.text = newEventText
 
 
@@ -100,7 +108,6 @@ func newCrewModuleAssigned():
 		# Crew bonus to module is 10x their module level
 		var changeAmount = (10 * (person.getLevel(person.moduleAssigned) + 1))
 		# Reduce crew effectiveness if life support is damaged
-		print("changeAmount before: ",changeAmount)
 		var percentChange = float($"Modules/Life Support".health) / 100.0
 		var newChangeAmount = float(changeAmount) * percentChange
 		changeAmount = int(newChangeAmount)
