@@ -109,8 +109,8 @@ func newCrewModuleAssigned():
 		module.repair = 0
 	for person in $Crew.get_children():
 		var changedModule = $Modules.get_child(person.moduleAssigned)
-		# Crew bonus to module is 10x their module level
-		var changeAmount = (10 * (person.getLevel(person.moduleAssigned) + 1))
+		# Crew bonus to module is 5x their module level
+		var changeAmount = (3 * (person.getLevel(person.moduleAssigned) + 1))
 		# Reduce crew effectiveness if life support is damaged
 		var percentChange = float($"Modules/Life Support".health) / 100.0
 		var newChangeAmount = float(changeAmount) * percentChange
