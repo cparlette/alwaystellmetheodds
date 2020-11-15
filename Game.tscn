@@ -28,7 +28,7 @@ __meta__ = {
 
 [node name="Engine" parent="Modules" instance=ExtResource( 2 )]
 
-[node name="Controls" parent="Modules" instance=ExtResource( 2 )]
+[node name="Navigation" parent="Modules" instance=ExtResource( 2 )]
 margin_top = 105.0
 margin_bottom = 205.0
 type = 1
@@ -50,7 +50,7 @@ margin_right = 305.0
 margin_bottom = 205.0
 type = 4
 
-[node name="Communications" parent="Modules" instance=ExtResource( 2 )]
+[node name="Sensors" parent="Modules" instance=ExtResource( 2 )]
 margin_left = 155.0
 margin_top = 210.0
 margin_right = 305.0

@@ -13,16 +13,16 @@ signal game_over
 func _ready():
 	if type == globals.MODULE_TYPE.ENGINE:
 		moduleName = "Engine"
-	elif type == globals.MODULE_TYPE.CONTROLS:
-		moduleName = "Controls"
+	elif type == globals.MODULE_TYPE.NAVIGATION:
+		moduleName = "Navigation"
 	elif type == globals.MODULE_TYPE.COMPUTER:
 		moduleName = "Computer"
 	elif type == globals.MODULE_TYPE.LIFE_SUPPORT:
 		moduleName = "Life Support"
 	elif type == globals.MODULE_TYPE.HULL:
 		moduleName = "Hull"
-	elif type == globals.MODULE_TYPE.COMMUNICATIONS:
-		moduleName = "Communications"
+	elif type == globals.MODULE_TYPE.SENSORS:
+		moduleName = "Sensors"
 	$NameLabel.text = moduleName
 	updateModuleUI()
 
