@@ -40,6 +40,16 @@ func updateModuleUI():
 			newText += "[color=lime] + " + str(repair) + "%[/color]"
 	newText += "[/center]"
 	$PercentLabel.bbcode_text = newText
+	# update module background color
+	if health == 100:
+		#green
+		$Background.color = Color("5a7e3f")
+	elif health > 50:
+		#yellow
+		$Background.color = Color("7f8263")
+	else:
+		#red
+		$Background.color = Color("826363")
 
 
 func causeDamage(damageAmount):
