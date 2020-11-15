@@ -25,7 +25,7 @@ func _ready():
 	initialText += ", you ask the computer to calculate the odds of a successful mission.  Judging by the distance of " + str(globals.destinationTotalDistance)
 	initialText += " million miles, the computer reads a 1% overall success rate.\n\n"
 	initialText += "Time to assign the crew to their initial tasks and start the journey."
-	$NewRoundOutput/OutputText.text = initialText
+	$NewRoundOutput/OutputText.bbcode_text = initialText
 
 
 func _input(event):
@@ -49,12 +49,12 @@ func newRound():
 		newText += resolveEvent()
 	for module in $Modules.get_children():
 		if module.repair > 0 and module.health < 100:
-			newText += "REPAIR: Module "+module.moduleName+" has been repaired!\n"
+			newText += "[color=lime]REPAIR[/color]: Module "+module.moduleName+" has been repaired!\n"
 			module.health += module.repair
 			if module.health > 100:
 				module.health = 100
 		module.updateModuleUI()
-	$NewRoundOutput/OutputText.text = newText
+	$NewRoundOutput/OutputText.bbcode_text = newText
 	# Add xp to crew
 	for person in $Crew.get_children():
 		person.raiseXP(5)
@@ -82,7 +82,7 @@ func updateEventOutput():
 		# Damaged sensors reduces event output
 		var newEventText = ""
 		if $Modules/Sensors.health < 33:
-			newEventText += "ERROR: Event information unavailable due to damaged sensors!"
+			newEventText += "[color=red]ERROR[/color]: Event information unavailable due to damaged sensors!"
 		else:
 			newEventText += currentEvent['text'] + "\n\n"
 			currentEventOdds = currentEvent['startingOdds']
@@ -91,8 +91,8 @@ func updateEventOutput():
 			if $Modules/Sensors.health > 66:
 				newEventText += "Current Odds: " + str(currentEventOdds)
 			else:
-				newEventText += "WARNING: Current odds unavailable due to damaged sensors!"
-		$EventOutput/OutputText.text = newEventText
+				newEventText += "[color=yellow]WARNING[/color]: Current odds unavailable due to damaged sensors!"
+		$EventOutput/OutputText.bbcode_text = newEventText
 
 
 func gameOver():

@@ -109,17 +109,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OutputText" type="Label" parent="NewRoundOutput"]
+[node name="OutputText" type="RichTextLabel" parent="NewRoundOutput"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+bbcode_enabled = true
 
 [node name="EventOutput" type="Control" parent="."]
 margin_left = 440.0
@@ -138,15 +135,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OutputText" type="Label" parent="EventOutput"]
+[node name="OutputText" type="RichTextLabel" parent="EventOutput"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+bbcode_enabled = true
 [connection signal="pressed" from="NewRoundButton" to="." method="_on_NewRoundButton_pressed"]
