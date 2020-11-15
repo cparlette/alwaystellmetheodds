@@ -96,7 +96,7 @@ __meta__ = {
 margin_left = 440.0
 margin_top = 20.0
 margin_right = 840.0
-margin_bottom = 170.0
+margin_bottom = 220.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,7 +120,7 @@ bbcode_enabled = true
 
 [node name="EventOutput" type="Control" parent="."]
 margin_left = 440.0
-margin_top = 190.0
+margin_top = 240.0
 margin_right = 840.0
 margin_bottom = 340.0
 __meta__ = {

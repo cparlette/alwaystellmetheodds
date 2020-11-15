@@ -54,7 +54,7 @@ func newRound():
 			if module.health > 100:
 				module.health = 100
 		module.updateModuleUI()
-	$NewRoundOutput/OutputText.bbcode_text = newText
+	
 	# Add xp to crew
 	for person in $Crew.get_children():
 		person.raiseXP(5)
@@ -65,6 +65,10 @@ func newRound():
 	currentEvent = globals.randomEvents[randomEventNumber]
 	currentEventOdds = currentEvent['startingOdds']
 	updateEventOutput()
+	# add any additional text from the global var, then reset it
+	newText += globals.additionalOutputText
+	globals.additionalOutputText = ""
+	$NewRoundOutput/OutputText.bbcode_text = newText
 
 func resolveEvent():
 	var randomNumber = rng.randi_range(0,100)

@@ -23,26 +23,27 @@ enum CREW_NAMES {
 const xpLevels = {
 	0: 0,
 	1: 5,
-	2: 10,
-	3: 15,
-	4: 20,
-	5: 40,
-	6: 100,
-	7: 200,
-	8: 500
+	2: 15,
+	3: 30,
+	4: 45,
+	5: 65,
+	6: 90,
+	7: 130,
+	8: 200,
+	9: 1000
 }
 
-var shipPowerMax = 10
-var shipPowerCurrent = 0
 
 var roundNumber = 1
 var distanceTraveled = 0
 var destinationTotalDistance = 390.4
 var destinationMoon = "Ganymede"
+var additionalOutputText = ""
 
 func reinitializeGame():
 	roundNumber = 1
 	distanceTraveled = 0
+	additionalOutputText = ""
 	
 
 var randomEvents = {

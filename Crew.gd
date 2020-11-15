@@ -4,11 +4,11 @@ export(globals.CREW_NAMES) var crewNameInput
 var crewName
 const choices = {
 	0: "Engine",
-	1: "Controls",
+	1: "Navigation",
 	2: "Computer",
 	3: "Life Support",
 	4: "Hull",
-	5: "Communications"
+	5: "Sensors"
 }
 
 var moduleAssigned = 0
@@ -45,6 +45,7 @@ func raiseXP(xpGained):
 	xp[moduleAssigned] += xpGained
 	if xp[moduleAssigned] >= globals.xpLevels[level[moduleAssigned] + 1]:
 		level[moduleAssigned] += 1
+		globals.additionalOutputText += "[color=lime]BONUS[/color]: " + crewName + " has gained a level in " + choices[moduleAssigned] + "\n"
 	updateCrewUI()
 
 func updateCrewUI():
