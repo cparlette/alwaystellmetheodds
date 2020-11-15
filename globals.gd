@@ -40,6 +40,11 @@ var distanceTraveled = 0
 var destinationTotalDistance = 390.4
 var destinationMoon = "Ganymede"
 
+func reinitializeGame():
+	roundNumber = 1
+	distanceTraveled = 0
+	
+
 var randomEvents = {
 	0: {
 		"text": "Sir, we are approaching an asteroid belt.  Routing power or crew to the controls should help us navigate better.  If any of those rocks hit us, we're going to take some damage",

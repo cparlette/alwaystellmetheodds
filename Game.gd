@@ -12,6 +12,7 @@ var currentEventOdds = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	globals.reinitializeGame()
 	rng.randomize()
 	for child in $Modules.get_children():
 		child.connect("game_over", self, "gameOver")
