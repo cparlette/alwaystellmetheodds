@@ -32,7 +32,7 @@ margin_top = 40.0
 margin_right = 160.0
 margin_bottom = 60.0
 text = "Engine"
-items = [ "Engine", null, false, 0, null, "Controls", null, false, 1, null, "Computer", null, false, 2, null, "Life Support", null, false, 3, null, "Hull", null, false, 4, null, "Communications", null, false, 5, null ]
+items = [ "Engine", null, false, 0, null, "Navigation", null, false, 1, null, "Computer", null, false, 2, null, "Life Support", null, false, 3, null, "Hull", null, false, 4, null, "Sensors", null, false, 5, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
