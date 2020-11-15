@@ -83,10 +83,10 @@ rect_min_size = Vector2( 250, 100 )
 crewNameInput = 2
 
 [node name="NewRoundButton" type="Button" parent="."]
-margin_left = 25.0
-margin_top = 650.0
-margin_right = 125.0
-margin_bottom = 670.0
+margin_left = 590.0
+margin_top = 525.0
+margin_right = 690.0
+margin_bottom = 545.0
 text = "New Round"
 __meta__ = {
 "_edit_use_anchors_": false
