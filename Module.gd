@@ -55,5 +55,5 @@ func updateModuleUI():
 func causeDamage(damageAmount):
 	health -= damageAmount
 	updateModuleUI()
-	if health == 0:
+	if health <= 0:
 		emit_signal("game_over")
