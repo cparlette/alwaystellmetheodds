@@ -48,12 +48,12 @@ func raiseXP(xpGained):
 	updateCrewUI()
 
 func updateCrewUI():
-	var newCrewUItext = "Engine: " + str(level[0]) + "\n"
-	newCrewUItext += "Controls: " + str(level[1]) + "\n"
-	newCrewUItext += "Comp: " + str(level[2]) + "\n"
-	newCrewUItext += "Life Sup: " + str(level[3]) + "\n"
-	newCrewUItext += "Hull: " + str(level[4]) + "\n"
-	newCrewUItext += "Comms: " + str(level[5]) + "\n"
+	var newCrewUItext = "ENG: " + str(level[0]) + "\n"
+	newCrewUItext += "NAV: " + str(level[1]) + "\n"
+	newCrewUItext += "COMP: " + str(level[2]) + "\n"
+	newCrewUItext += "LIFE: " + str(level[3]) + "\n"
+	newCrewUItext += "HULL: " + str(level[4]) + "\n"
+	newCrewUItext += "SEN: " + str(level[5]) + "\n"
 	$XPLevel.text = newCrewUItext
 
 func getLevel(moduleID):
