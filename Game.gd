@@ -127,4 +127,5 @@ func newCrewModuleAssigned():
 
 func calculateDistanceThisRound():
 	distanceThisRound = 0
-	distanceThisRound += $Modules/Engine.boost
+	# any damage to the engines will reduce distance traveled
+	distanceThisRound += $Modules/Engine.boost * ($Modules/Engine.health / 100.0)
