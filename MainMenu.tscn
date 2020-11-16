@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/space-v1.png" type="Texture" id=2]
 [ext_resource path="res://graphics/titlescreen-v1.png" type="Texture" id=3]
+[ext_resource path="res://RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://font_14.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,20 +22,23 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="Title" type="Label" parent="."]
-margin_left = 560.0
+margin_left = 440.0
 margin_top = 40.0
-margin_right = 720.0
-margin_bottom = 54.0
+margin_right = 840.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 1 )
 text = "Always Tell Me The Odds"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NewGame" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 100.0
+margin_top = 150.0
 margin_right = 690.0
-margin_bottom = 120.0
+margin_bottom = 175.0
+custom_fonts/font = ExtResource( 5 )
 text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -37,9 +46,10 @@ __meta__ = {
 
 [node name="Quit" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 140.0
+margin_top = 240.0
 margin_right = 690.0
-margin_bottom = 160.0
+margin_bottom = 265.0
+custom_fonts/font = ExtResource( 5 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false

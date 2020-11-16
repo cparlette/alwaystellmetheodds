@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
+[ext_resource path="res://RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://font_14.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,10 +24,11 @@ __meta__ = {
 }
 
 [node name="GameOverText" type="Label" parent="."]
-margin_left = 590.0
+margin_left = 490.0
 margin_top = 50.0
-margin_right = 690.0
-margin_bottom = 64.0
+margin_right = 790.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 1 )
 text = "Game Over!"
 align = 1
 __meta__ = {
@@ -25,11 +36,14 @@ __meta__ = {
 }
 
 [node name="ScoreText" type="Label" parent="."]
-margin_left = 565.0
-margin_top = 100.0
-margin_right = 715.0
-margin_bottom = 114.0
-text = "0 rounds completed"
+margin_left = 390.0
+margin_top = 150.0
+margin_right = 890.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 2 )
+text = "0 rounds completed
+0 million miles traveled
+0 million miles remaining"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -37,9 +51,10 @@ __meta__ = {
 
 [node name="MainMenuButton" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 200.0
+margin_top = 400.0
 margin_right = 690.0
-margin_bottom = 220.0
+margin_bottom = 420.0
+custom_fonts/font = ExtResource( 3 )
 text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,9 +62,10 @@ __meta__ = {
 
 [node name="QuitButton" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 250.0
+margin_top = 500.0
 margin_right = 690.0
-margin_bottom = 270.0
+margin_bottom = 520.0
+custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
