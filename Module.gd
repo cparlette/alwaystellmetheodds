@@ -6,6 +6,7 @@ var changeAmount = 5
 var health = 100
 var boost = 0
 var repair = 0
+var originalPosition = 0
 
 signal game_over
 
@@ -25,6 +26,7 @@ func _ready():
 		moduleName = "Sensors"
 	$NameLabel.text = moduleName
 	updateModuleUI()
+	originalPosition = self.rect_position
 
 func updateModuleUI():
 	var newText = "[center]Boost: "
@@ -55,5 +57,16 @@ func updateModuleUI():
 func causeDamage(damageAmount):
 	health -= damageAmount
 	updateModuleUI()
+	shakeTween()
 	if health <= 0:
 		emit_signal("game_over")
+
+func shakeTween():
+	#$Tween.interpolate_method(self, "_tween_region_rect", current_coordinates, target_coordinates, 1.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0)
+	#var p = self.rect_position
+	$Tween.interpolate_property(self, 'rect_position', Vector2(originalPosition.x-5, originalPosition.y-5), Vector2(originalPosition.x, originalPosition.y), .5, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	$Tween.start()
+
+
+func _on_Tween_tween_completed(object, key):
+	self.rect_position = originalPosition
