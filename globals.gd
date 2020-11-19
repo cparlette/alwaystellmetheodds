@@ -40,6 +40,11 @@ var destinationTotalDistance = 390.4
 var destinationMoon = "Ganymede"
 var additionalOutputText = ""
 
+var captainName = "Captain"
+var crew1Name = "Ann"
+var crew2Name = "Bob"
+var crew3Name = "Chad"
+
 func reinitializeGame():
 	roundNumber = 1
 	distanceTraveled = 0

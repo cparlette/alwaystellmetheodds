@@ -22,11 +22,11 @@ signal crew_AssignmentChanged
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if crewNameInput == globals.CREW_NAMES.Ann:
-		crewName = "Ann"
+		crewName = globals.crew1Name
 	elif crewNameInput == globals.CREW_NAMES.Bob:
-		crewName = "Bob"
+		crewName = globals.crew2Name
 	elif crewNameInput == globals.CREW_NAMES.Chad:
-		crewName = "Chad"
+		crewName = globals.crew3Name
 	elif crewNameInput == globals.CREW_NAMES.Deb:
 		crewName = "Deb"
 	$NameLabel.text = crewName
