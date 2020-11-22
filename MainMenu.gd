@@ -49,6 +49,4 @@ func _on_BackButton_pressed():
 
 
 func _on_MoonOption_item_selected(index):
-	print("You have chosen index ", index)
-	print("Moon is ", globals.possibleMoons[index])
 	globals.destinationMoon = globals.possibleMoons[$EnterNameMenu/MoonOption.get_item_id(index)]
