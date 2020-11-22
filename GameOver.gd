@@ -3,15 +3,16 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var newText = str(globals.roundNumber) + " rounds completed\n"
-	if globals.distanceTraveled >= globals.destinationTotalDistance:
+	if globals.distanceTraveled >= globals.destinationMoon['distance']:
 		# win
 		$Background.color = Color("5a7e3f")
+		newText += "You successfully made it to " + globals.destinationMoon['name'] + "!\n"
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
 	else:
 		# lose
 		$Background.color = Color("826363")
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
-		newText += str(globals.destinationTotalDistance - globals.distanceTraveled) + " million miles remained"
+		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained"
 	$ScoreText.text = newText
 
 func _input(event):

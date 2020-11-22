@@ -33,11 +33,16 @@ const xpLevels = {
 	9: 1000
 }
 
+const possibleMoons = {
+	0: {"name": "Phobos", "distance": 48.3, "difficulty":"Easy", "moonID":0},
+	1: {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":1},
+	2: {"name": "Titan", "distance": 890.7, "difficulty":"Hard", "moonID":2},
+	3: {"name": "Oberon", "distance": 1692.0, "difficulty":"Expert", "moonID":3}
+}
 
 var roundNumber = 1
 var distanceTraveled = 0
-var destinationTotalDistance = 390.4
-var destinationMoon = "Ganymede"
+var destinationMoon = {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":0}
 var additionalOutputText = ""
 
 var captainName = "Captain"

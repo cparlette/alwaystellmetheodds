@@ -34,6 +34,7 @@ __meta__ = {
 }
 
 [node name="NewGameMenu" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -63,7 +64,6 @@ __meta__ = {
 }
 
 [node name="EnterNameMenu" type="Control" parent="."]
-visible = false
 margin_left = 440.0
 margin_top = 100.0
 margin_right = 840.0
@@ -112,10 +112,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MoonLabel" type="Label" parent="EnterNameMenu"]
+margin_left = 15.0
+margin_top = 125.0
+margin_right = 124.0
+margin_bottom = 139.0
+text = "Destination Moon:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CaptainName" type="LineEdit" parent="EnterNameMenu"]
 margin_left = 150.0
 margin_right = 350.0
 margin_bottom = 24.0
+text = "Captain"
 max_length = 25
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,6 +164,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MoonOption" type="OptionButton" parent="EnterNameMenu"]
+margin_left = 150.0
+margin_top = 120.0
+margin_right = 350.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartGameButton" type="Button" parent="EnterNameMenu"]
 margin_left = 100.0
 margin_top = 200.0
@@ -171,5 +191,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="NewGameMenu/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="NewGameMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="item_selected" from="EnterNameMenu/MoonOption" to="." method="_on_MoonOption_item_selected"]
 [connection signal="pressed" from="EnterNameMenu/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="EnterNameMenu/BackButton" to="." method="_on_BackButton_pressed"]

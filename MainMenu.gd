@@ -3,6 +3,11 @@ extends Node2D
 func _ready():
 	$EnterNameMenu.visible = false
 	$NewGameMenu.visible = true
+	for moonNum in globals.possibleMoons:
+		var moon = globals.possibleMoons[moonNum]
+		var optionString = moon['name']
+		optionString += " - " + moon['difficulty']
+		$EnterNameMenu/MoonOption.add_item(optionString, moon['moonID'])
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -41,3 +46,9 @@ func _on_StartGameButton_pressed():
 func _on_BackButton_pressed():
 	$EnterNameMenu.visible = false
 	$NewGameMenu.visible = true
+
+
+func _on_MoonOption_item_selected(index):
+	print("You have chosen index ", index)
+	print("Moon is ", globals.possibleMoons[index])
+	globals.destinationMoon = globals.possibleMoons[$EnterNameMenu/MoonOption.get_item_id(index)]

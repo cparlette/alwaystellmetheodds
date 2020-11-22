@@ -21,8 +21,8 @@ func _ready():
 		person.updateCrewUI()
 	newCrewModuleAssigned()
 	#updatePower()
-	var initialText = "As you begin your journey to " + globals.destinationMoon
-	initialText += ", you ask the computer to calculate the odds of a successful mission.  Judging by the distance of " + str(globals.destinationTotalDistance)
+	var initialText = "As you begin your journey to " + globals.destinationMoon['name']
+	initialText += ", you ask the computer to calculate the odds of a successful mission.  Judging by the distance of " + str(globals.destinationMoon['distance'])
 	initialText += " million miles, the computer reads a 1% overall success rate.\n\n"
 	initialText += "Time to assign the crew to their initial tasks and start the journey."
 	$NewRoundOutput/OutputText.bbcode_text = initialText
@@ -40,11 +40,11 @@ func newRound():
 	var newText = "Starting round " + str(globals.roundNumber) + "\n\n"
 	globals.roundNumber += 1
 	globals.distanceTraveled += distanceThisRound
-	if globals.distanceTraveled > globals.destinationTotalDistance:
+	if globals.distanceTraveled > globals.destinationMoon['distance']:
 		gameOver()
 	newText += " - Distance traveled this round: " + str(distanceThisRound) + " million miles\n"
 	newText += " - Distance traveled so far: " + str(globals.distanceTraveled) + " million miles\n"
-	newText += " - Distance to " + globals.destinationMoon + ": " + str(globals.destinationTotalDistance - globals.distanceTraveled) + " million miles\n\n"
+	newText += " - Distance to " + globals.destinationMoon['name'] + ": " + str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles\n\n"
 	if currentEvent['text']:
 		newText += resolveEvent()
 	for module in $Modules.get_children():
