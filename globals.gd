@@ -43,7 +43,7 @@ const possibleMoons = {
 var roundNumber = 1
 var distanceTraveled = 0
 var score = 0
-var destinationMoon = {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":0}
+var destinationMoon = {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":1}
 var additionalOutputText = ""
 
 var captainName = "Captain"

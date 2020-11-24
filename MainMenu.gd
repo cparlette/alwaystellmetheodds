@@ -8,6 +8,7 @@ func _ready():
 		var optionString = moon['name']
 		optionString += " - " + moon['difficulty']
 		$EnterNameMenu/MoonOption.add_item(optionString, moon['moonID'])
+	$EnterNameMenu/MoonOption.selected = 0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -40,6 +41,10 @@ func _on_StartGameButton_pressed():
 		globals.crew3Name = "Chad"
 	else:
 		globals.crew3Name = $EnterNameMenu/Crew3Name.text
+	if $EnterNameMenu/MoonOption.selected == -1 or $EnterNameMenu/MoonOption.selected == 0:
+		# Something wasn't picked, so choose the first option
+		globals.destinationMoon = globals.possibleMoons[0]
+	print("Destination moon is ",globals.destinationMoon)
 	get_tree().change_scene("Game.tscn")
 
 
