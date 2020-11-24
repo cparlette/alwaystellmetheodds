@@ -12,7 +12,8 @@ func _ready():
 		# lose
 		$Background.color = Color("826363")
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
-		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained"
+		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained\n"
+	newText += "Score: " + str(globals.score)
 	$ScoreText.text = newText
 
 func _input(event):

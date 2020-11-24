@@ -100,6 +100,15 @@ func updateEventOutput():
 
 
 func gameOver():
+	# Generate a score
+	var newScore = globals.distanceTraveled
+	for module in $Modules.get_children():
+		newScore += module.health
+	for person in $Crew.get_children():
+		for XPlevel in person.level:
+			newScore += (XPlevel * person.level[XPlevel])
+	globals.score = newScore
+	# Switch to the game over scene
 	get_tree().change_scene("GameOver.tscn")
 
 
