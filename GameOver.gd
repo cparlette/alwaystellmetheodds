@@ -1,5 +1,7 @@
 extends Node2D
 
+var postToLeaderboardURL = "https://n66ezcafo7.execute-api.us-east-1.amazonaws.com/default/atmto-addScoreToLeaderboard"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var newText = str(globals.roundNumber) + " rounds completed\n"
@@ -15,6 +17,9 @@ func _ready():
 		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained\n"
 	newText += "Score: " + str(globals.score)
 	$ScoreText.text = newText
+	
+	# Pull the current captain name
+	$LeaderboardEntry/NameEntry.text = globals.captainName
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -25,3 +30,20 @@ func _on_MainMenuButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+func _on_NameSubmit_pressed():
+	if $LeaderboardEntry/NameEntry.text == "":
+		pass
+	else:
+		globals.captainName = $LeaderboardEntry/NameEntry.text
+		# Send to leaderboard
+		var data = {
+			'name': globals.captainName,
+			'score': globals.score,
+			'timestamp': OS.get_unix_time(),
+			'moon': globals.destinationMoon['name']
+		}
+		var query = JSON.print(data)
+		var headers = ["Content-Type: application/json"]
+		$LeaderboardEntry/HTTPRequest.request(postToLeaderboardURL, headers, true, HTTPClient.METHOD_POST, query)
+		$LeaderboardEntry.visible = false

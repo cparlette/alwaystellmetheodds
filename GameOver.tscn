@@ -43,7 +43,8 @@ margin_bottom = 255.0
 custom_fonts/font = SubResource( 2 )
 text = "0 rounds completed
 0 million miles traveled
-0 million miles remaining"
+0 million miles remaining
+Score: 0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,9 +52,9 @@ __meta__ = {
 
 [node name="MainMenuButton" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 400.0
+margin_top = 550.0
 margin_right = 690.0
-margin_bottom = 420.0
+margin_bottom = 575.0
 custom_fonts/font = ExtResource( 3 )
 text = "Main Menu"
 __meta__ = {
@@ -62,13 +63,48 @@ __meta__ = {
 
 [node name="QuitButton" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 500.0
+margin_top = 600.0
 margin_right = 690.0
-margin_bottom = 520.0
+margin_bottom = 625.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LeaderboardEntry" type="Control" parent="."]
+margin_left = 490.0
+margin_top = 350.0
+margin_right = 790.0
+margin_bottom = 550.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderboardText" type="Label" parent="LeaderboardEntry"]
+margin_right = 300.0
+margin_bottom = 14.0
+text = "Submit to the leaderboard?"
+align = 1
+
+[node name="NameEntry" type="LineEdit" parent="LeaderboardEntry"]
+margin_left = 25.0
+margin_top = 34.0
+margin_right = 275.0
+margin_bottom = 58.0
+text = "Captain"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameSubmit" type="Button" parent="LeaderboardEntry"]
+margin_left = 120.0
+margin_top = 78.0
+margin_right = 180.0
+margin_bottom = 98.0
+text = "Submit"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LeaderboardEntry"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="LeaderboardEntry/NameSubmit" to="." method="_on_NameSubmit_pressed"]
