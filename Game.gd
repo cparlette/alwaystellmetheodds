@@ -136,5 +136,9 @@ func newCrewModuleAssigned():
 
 func calculateDistanceThisRound():
 	distanceThisRound = 0
+	# maybe add a base level of distance based on engine health and moon ID
+	#distanceThisRound += ($Modules/Engine.health / 10.0) * globals.destinationMoon['moonID']
+	# maybe add distance based on already-traveled distance (like inertia)?
+	distanceThisRound += globals.distanceTraveled * .1
 	# any damage to the engines will reduce distance traveled
 	distanceThisRound += $Modules/Engine.boost * ($Modules/Engine.health / 100.0)
