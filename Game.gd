@@ -107,7 +107,7 @@ func gameOver():
 	for person in $Crew.get_children():
 		for XPlevel in person.level:
 			newScore += (XPlevel * person.level[XPlevel])
-	globals.score = newScore
+	globals.score = int(newScore)
 	# Switch to the game over scene
 	get_tree().change_scene("GameOver.tscn")
 
