@@ -1,12 +1,14 @@
 extends Node2D
 
 var postToLeaderboardURL = "https://n66ezcafo7.execute-api.us-east-1.amazonaws.com/default/atmto-addScoreToLeaderboard"
+var victory = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var newText = str(globals.roundNumber) + " rounds completed\n"
 	if globals.distanceTraveled >= globals.destinationMoon['distance']:
 		# win
+		victory = 1
 		$Background.color = Color("5a7e3f")
 		newText += "You successfully made it to " + globals.destinationMoon['name'] + "!\n"
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
@@ -41,7 +43,8 @@ func _on_NameSubmit_pressed():
 			'name': globals.captainName,
 			'score': globals.score,
 			'timestamp': OS.get_unix_time(),
-			'moon': globals.destinationMoon['name']
+			'moon': globals.destinationMoon['name'],
+			'victory': victory
 		}
 		var query = JSON.print(data)
 		var headers = ["Content-Type: application/json"]
