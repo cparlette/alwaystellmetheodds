@@ -73,11 +73,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="Button" parent="NewGameMenu"]
+[node name="About" type="Button" parent="NewGameMenu"]
 margin_left = 590.0
 margin_top = 255.0
 margin_right = 690.0
 margin_bottom = 280.0
+custom_fonts/font = ExtResource( 5 )
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="NewGameMenu"]
+margin_left = 590.0
+margin_top = 290.0
+margin_right = 690.0
+margin_bottom = 315.0
 custom_fonts/font = ExtResource( 5 )
 text = "Quit"
 __meta__ = {
@@ -213,6 +224,7 @@ __meta__ = {
 }
 
 [node name="Leaderboard" type="Control" parent="."]
+visible = false
 margin_left = 50.0
 margin_top = 100.0
 margin_right = 1230.0
@@ -475,9 +487,45 @@ margin_top = 540.0
 margin_right = 665.0
 margin_bottom = 560.0
 text = "Back To Main Menu"
+
+[node name="HowToPlayDialog" type="AcceptDialog" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1230.0
+margin_bottom = 670.0
+window_title = "How To Play"
+dialog_text = "You are captain of a rescue shuttle on a mission to bring supplies to one of the moon bases in our solar system.  There are four different moons that have bases:
+
+Phobos - The largest moon orbiting Mars
+Ganymede - The largest moon orbiting Jupiter
+Titan - The largest moon orbiting Saturn
+Oberon - The second largest  moon orbiting Uranus
+
+You have 3 crew members on your team.  Each can be assigned to one of the 6 modules on your spacecraft, and can either be assigned to boost that module or repair it.  As you travel along, various events will occur that have a chance of causing damage to one of the modules.  Boosting one of the other modules will help prevent damage.
+
+Your crew members will gain experience each round based on which module they are assigned to.  This experience will increase their level, causing more boost or repair as they become more advanced.
+
+If your hull health drops to 0%, your ship explodes and your mission is a failure.
+
+Good luck!"
+dialog_autowrap = true
+
+[node name="AboutDialog" type="AcceptDialog" parent="."]
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 1080.0
+margin_bottom = 400.0
+window_title = "About"
+dialog_text = "Always Tell Me The Odds: A space survival game by Chris Parlette
+
+All programming, assets, sound, music, and graphics are original by Chris Parlette.
+
+This was originally made for the Github Game Off 2020 game jam, where the theme of the jam was 'moonshot'."
+dialog_autowrap = true
 [connection signal="pressed" from="NewGameMenu/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="NewGameMenu/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="NewGameMenu/HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="NewGameMenu/About" to="." method="_on_About_pressed"]
 [connection signal="pressed" from="NewGameMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="item_selected" from="EnterNameMenu/MoonOption" to="." method="_on_MoonOption_item_selected"]
 [connection signal="pressed" from="EnterNameMenu/StartGameButton" to="." method="_on_StartGameButton_pressed"]

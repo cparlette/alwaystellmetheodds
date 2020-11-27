@@ -68,7 +68,8 @@ func _on_Leaderboard_pressed():
 
 
 func _on_HowToPlay_pressed():
-	pass # Replace with function body.
+	$HowToPlayDialog.visible = true
+
 
 func buildLeaderboard():
 	$Leaderboard/HTTPRequest.request(getLeaderboardAPI)
@@ -138,3 +139,8 @@ func _on_BackToMainMenuFromLeaderboard_pressed():
 	$EnterNameMenu.visible = false
 	$Leaderboard.visible = false
 	$NewGameMenu.visible = true
+
+
+func _on_About_pressed():
+	$AboutDialog.visible = true
+
