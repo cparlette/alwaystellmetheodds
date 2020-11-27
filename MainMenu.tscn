@@ -34,7 +34,6 @@ __meta__ = {
 }
 
 [node name="NewGameMenu" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -52,11 +51,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Leaderboard" type="Button" parent="NewGameMenu"]
+margin_left = 590.0
+margin_top = 185.0
+margin_right = 690.0
+margin_bottom = 210.0
+custom_fonts/font = ExtResource( 5 )
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlay" type="Button" parent="NewGameMenu"]
+margin_left = 590.0
+margin_top = 220.0
+margin_right = 690.0
+margin_bottom = 245.0
+custom_fonts/font = ExtResource( 5 )
+text = "How To Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quit" type="Button" parent="NewGameMenu"]
 margin_left = 590.0
-margin_top = 240.0
+margin_top = 255.0
 margin_right = 690.0
-margin_bottom = 265.0
+margin_bottom = 280.0
 custom_fonts/font = ExtResource( 5 )
 text = "Quit"
 __meta__ = {
@@ -64,6 +85,7 @@ __meta__ = {
 }
 
 [node name="EnterNameMenu" type="Control" parent="."]
+visible = false
 margin_left = 440.0
 margin_top = 100.0
 margin_right = 840.0
@@ -189,8 +211,276 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Leaderboard" type="Control" parent="."]
+margin_left = 50.0
+margin_top = 100.0
+margin_right = 1230.0
+margin_bottom = 670.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Phobos" type="HBoxContainer" parent="Leaderboard/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = 4.0
+margin_bottom = 32.0
+
+[node name="Name" type="VBoxContainer" parent="Leaderboard/TabContainer/Phobos"]
+margin_right = 292.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Phobos/Name"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Name:
+--------"
+
+[node name="Score" type="VBoxContainer" parent="Leaderboard/TabContainer/Phobos"]
+margin_left = 296.0
+margin_right = 588.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Phobos/Score"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Score:
+--------"
+
+[node name="Date" type="VBoxContainer" parent="Leaderboard/TabContainer/Phobos"]
+margin_left = 592.0
+margin_right = 884.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Phobos/Date"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Date:
+--------"
+
+[node name="Victory" type="VBoxContainer" parent="Leaderboard/TabContainer/Phobos"]
+margin_left = 888.0
+margin_right = 1180.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Phobos/Victory"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Victorious?
+--------"
+
+[node name="Ganymede" type="HBoxContainer" parent="Leaderboard/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Name" type="VBoxContainer" parent="Leaderboard/TabContainer/Ganymede"]
+margin_right = 292.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Ganymede/Name"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Name:
+--------"
+
+[node name="Score" type="VBoxContainer" parent="Leaderboard/TabContainer/Ganymede"]
+margin_left = 296.0
+margin_right = 588.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Ganymede/Score"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Score:
+--------"
+
+[node name="Date" type="VBoxContainer" parent="Leaderboard/TabContainer/Ganymede"]
+margin_left = 592.0
+margin_right = 884.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Ganymede/Date"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Date:
+--------"
+
+[node name="Victory" type="VBoxContainer" parent="Leaderboard/TabContainer/Ganymede"]
+margin_left = 888.0
+margin_right = 1180.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Ganymede/Victory"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Victorious?
+--------"
+
+[node name="Titan" type="HBoxContainer" parent="Leaderboard/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Name" type="VBoxContainer" parent="Leaderboard/TabContainer/Titan"]
+margin_right = 292.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Titan/Name"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Name:
+--------"
+
+[node name="Score" type="VBoxContainer" parent="Leaderboard/TabContainer/Titan"]
+margin_left = 296.0
+margin_right = 588.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Titan/Score"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Score:
+--------"
+
+[node name="Date" type="VBoxContainer" parent="Leaderboard/TabContainer/Titan"]
+margin_left = 592.0
+margin_right = 884.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Titan/Date"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Date:
+--------"
+
+[node name="Victory" type="VBoxContainer" parent="Leaderboard/TabContainer/Titan"]
+margin_left = 888.0
+margin_right = 1180.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Titan/Victory"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Victorious?
+--------"
+
+[node name="Oberon" type="HBoxContainer" parent="Leaderboard/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Name" type="VBoxContainer" parent="Leaderboard/TabContainer/Oberon"]
+margin_right = 292.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Oberon/Name"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Name:
+--------"
+
+[node name="Score" type="VBoxContainer" parent="Leaderboard/TabContainer/Oberon"]
+margin_left = 296.0
+margin_right = 588.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Oberon/Score"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Score:
+--------"
+
+[node name="Date" type="VBoxContainer" parent="Leaderboard/TabContainer/Oberon"]
+margin_left = 592.0
+margin_right = 884.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Oberon/Date"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Date:
+--------"
+
+[node name="Victory" type="VBoxContainer" parent="Leaderboard/TabContainer/Oberon"]
+margin_left = 888.0
+margin_right = 1180.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="Label" type="Label" parent="Leaderboard/TabContainer/Oberon/Victory"]
+margin_right = 292.0
+margin_bottom = 31.0
+text = "Victorious?
+--------"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Leaderboard"]
+
+[node name="BackToMainMenuFromLeaderboard" type="Button" parent="Leaderboard"]
+margin_left = 515.0
+margin_top = 540.0
+margin_right = 665.0
+margin_bottom = 560.0
+text = "Back To Main Menu"
 [connection signal="pressed" from="NewGameMenu/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="NewGameMenu/Leaderboard" to="." method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="NewGameMenu/HowToPlay" to="." method="_on_HowToPlay_pressed"]
 [connection signal="pressed" from="NewGameMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="item_selected" from="EnterNameMenu/MoonOption" to="." method="_on_MoonOption_item_selected"]
 [connection signal="pressed" from="EnterNameMenu/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="EnterNameMenu/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="request_completed" from="Leaderboard/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="Leaderboard/BackToMainMenuFromLeaderboard" to="." method="_on_BackToMainMenuFromLeaderboard_pressed"]
