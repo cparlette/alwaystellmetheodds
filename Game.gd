@@ -120,15 +120,19 @@ func newCrewModuleAssigned():
 	for person in $Crew.get_children():
 		var changedModule = $Modules.get_child(person.moduleAssigned)
 		# Crew bonus to module is 5x their module level
-		var changeAmount = (3 * (person.getLevel(person.moduleAssigned) + 1))
+		var changeAmount = (2 * (person.getLevel(person.moduleAssigned)))
+		if changeAmount == 0:
+			changeAmount = 1
 		# Reduce crew effectiveness if life support is damaged
 		var percentChange = float($"Modules/Life Support".health) / 100.0
+		if percentChange < 1:
+			percentChange = ((1 - percentChange) / 2) + percentChange
 		var newChangeAmount = float(changeAmount) * percentChange
 		changeAmount = int(newChangeAmount)
 		if person.taskAssigned == 0:
 			changedModule.boost += changeAmount
 		elif person.taskAssigned == 1:
-			changedModule.repair += changeAmount
+			changedModule.repair += (changeAmount * 3)
 	for module in $Modules.get_children():
 		module.updateModuleUI()
 	calculateDistanceThisRound()
@@ -140,7 +144,7 @@ func calculateDistanceThisRound():
 	# maybe add a base level of distance based on engine health and moon ID
 	#distanceThisRound += ($Modules/Engine.health / 10.0) * globals.destinationMoon['moonID']
 	# maybe add distance based on already-traveled distance (like inertia)?
-	distanceThisRound += globals.distanceTraveled * .1
+	distanceThisRound += globals.distanceTraveled * .05
 	# any damage to the engines will reduce distance traveled
 	distanceThisRound += $Modules/Engine.boost * ($Modules/Engine.health / 100.0)
 
