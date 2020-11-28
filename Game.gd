@@ -54,6 +54,7 @@ func newRound():
 			if module.health > 100:
 				module.health = 100
 		module.updateModuleUI()
+	calculateSurvivalOdds()
 	
 	# Add xp to crew
 	for person in $Crew.get_children():
@@ -142,3 +143,10 @@ func calculateDistanceThisRound():
 	distanceThisRound += globals.distanceTraveled * .1
 	# any damage to the engines will reduce distance traveled
 	distanceThisRound += $Modules/Engine.boost * ($Modules/Engine.health / 100.0)
+
+func calculateSurvivalOdds():
+	var newOdds = 1
+	if globals.distanceTraveled > 0:
+		newOdds = globals.distanceTraveled * 100.0 / globals.destinationMoon['distance']
+	newOdds = newOdds * (float($"Modules/Hull".health) / 100.0)
+	$OddsNumber.text = str(newOdds)+"%"

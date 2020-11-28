@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/space-v1.png" type="Texture" id=2]
-[ext_resource path="res://graphics/titlescreen-v1.png" type="Texture" id=3]
+[ext_resource path="res://graphics/titlescreen-v2.png" type="Texture" id=3]
 [ext_resource path="res://RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://font_14.tres" type="DynamicFont" id=5]
 
@@ -245,8 +245,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
-margin_right = 4.0
-margin_bottom = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="Name" type="VBoxContainer" parent="Leaderboard/TabContainer/Phobos"]
 margin_right = 292.0

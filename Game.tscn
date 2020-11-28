@@ -4,7 +4,7 @@
 [ext_resource path="res://Module.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/space-v1.png" type="Texture" id=3]
 [ext_resource path="res://Crew.tscn" type="PackedScene" id=4]
-[ext_resource path="res://graphics/background-v5.png" type="Texture" id=5]
+[ext_resource path="res://graphics/titlescreen-v2.png" type="Texture" id=5]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -84,9 +84,9 @@ crewNameInput = 2
 
 [node name="NewRoundButton" type="Button" parent="."]
 margin_left = 590.0
-margin_top = 525.0
+margin_top = 500.0
 margin_right = 690.0
-margin_bottom = 545.0
+margin_bottom = 520.0
 text = "New Round"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -143,4 +143,26 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 bbcode_enabled = true
+
+[node name="OddsLabel" type="Label" parent="."]
+margin_left = 565.0
+margin_top = 440.0
+margin_right = 715.0
+margin_bottom = 454.0
+text = "Current Survival Odds:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OddsNumber" type="Label" parent="."]
+margin_left = 565.0
+margin_top = 455.0
+margin_right = 715.0
+margin_bottom = 469.0
+text = "1%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="NewRoundButton" to="." method="_on_NewRoundButton_pressed"]
