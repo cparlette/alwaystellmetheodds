@@ -18,15 +18,12 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
-
 func _on_Quit_pressed():
 	get_tree().quit()
-
 
 func _on_NewGame_pressed():
 	$NewGameMenu.visible = false
 	$EnterNameMenu.visible = true
-
 
 func _on_StartGameButton_pressed():
 	if $EnterNameMenu/CaptainName.text == "":
@@ -48,32 +45,25 @@ func _on_StartGameButton_pressed():
 	if $EnterNameMenu/MoonOption.selected == -1 or $EnterNameMenu/MoonOption.selected == 0:
 		# Something wasn't picked, so choose the first option
 		globals.destinationMoon = globals.possibleMoons[0]
-	print("Destination moon is ",globals.destinationMoon)
 	get_tree().change_scene("Game.tscn")
-
 
 func _on_BackButton_pressed():
 	$EnterNameMenu.visible = false
 	$NewGameMenu.visible = true
 
-
 func _on_MoonOption_item_selected(index):
 	globals.destinationMoon = globals.possibleMoons[$EnterNameMenu/MoonOption.get_item_id(index)]
-
 
 func _on_Leaderboard_pressed():
 	$EnterNameMenu.visible = false
 	$NewGameMenu.visible = false
 	$Leaderboard.visible = true
 
-
 func _on_HowToPlay_pressed():
 	$HowToPlayDialog.visible = true
 
-
 func buildLeaderboard():
 	$Leaderboard/HTTPRequest.request(getLeaderboardAPI)
-
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var json = parse_json(body.get_string_from_utf8())
@@ -134,13 +124,10 @@ class MyCustomSorter:
 			else:
 				return false
 
-
 func _on_BackToMainMenuFromLeaderboard_pressed():
 	$EnterNameMenu.visible = false
 	$Leaderboard.visible = false
 	$NewGameMenu.visible = true
 
-
 func _on_About_pressed():
 	$AboutDialog.visible = true
-
