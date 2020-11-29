@@ -30,6 +30,7 @@ func _ready():
 	elif crewNameInput == globals.CREW_NAMES.Deb:
 		crewName = "Deb"
 	$NameLabel.text = crewName
+	$BoostCheck.pressed = true
 
 
 func _on_ModuleOption_item_selected(index):
@@ -66,3 +67,17 @@ func updateCrewUI():
 
 func getLevel(moduleID):
 	return level[moduleID]
+
+
+func _on_BoostCheck_toggled(button_pressed):
+	taskAssigned = 0
+	#$BoostCheck.button_pressed = true
+	#$RepairCheck.button_pressed = false
+	emit_signal("crew_AssignmentChanged")
+
+
+func _on_RepairCheck_toggled(button_pressed):
+	taskAssigned = 1
+	#$BoostCheck.button_pressed = false
+	#$RepairCheck.button_pressed = true
+	emit_signal("crew_AssignmentChanged")

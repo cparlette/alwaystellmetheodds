@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Crew.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.12549, 0.682353, 0.109804, 1 )
+
+[sub_resource type="ButtonGroup" id=2]
+resource_name = "tasks"
 
 [node name="Crew" type="Control"]
 margin_right = 250.0
@@ -40,15 +43,6 @@ selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TaskOption" type="OptionButton" parent="."]
-margin_left = 50.0
-margin_top = 70.0
-margin_right = 150.0
-margin_bottom = 90.0
-text = "Boost"
-items = [ "Boost", null, false, 0, null, "Repair", null, false, 1, null ]
-selected = 0
 
 [node name="XPLevel" type="Label" parent="."]
 margin_left = 170.0
@@ -119,5 +113,35 @@ custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = 70.0
+margin_right = 160.0
+margin_bottom = 94.0
+color = Color( 0, 0, 0, 0.290196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoostCheck" type="CheckBox" parent="."]
+margin_left = 10.0
+margin_top = 70.0
+margin_right = 75.0
+margin_bottom = 94.0
+group = SubResource( 2 )
+text = "Boost"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RepairCheck" type="CheckBox" parent="."]
+margin_left = 90.0
+margin_top = 70.0
+margin_right = 160.0
+margin_bottom = 94.0
+group = SubResource( 2 )
+text = "Repair"
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
-[connection signal="item_selected" from="TaskOption" to="." method="_on_TaskOption_item_selected"]
+[connection signal="toggled" from="BoostCheck" to="." method="_on_BoostCheck_toggled"]
+[connection signal="toggled" from="RepairCheck" to="." method="_on_RepairCheck_toggled"]
