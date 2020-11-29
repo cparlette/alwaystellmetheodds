@@ -71,37 +71,37 @@ func reinitializeGame():
 
 var randomEvents = {
 	0: {
-		"text": "Sir, we are approaching an asteroid belt.  Boosting navigation should help us avoid collisions.  If any of those rocks hit us, our hull is going to take some damage",
+		"text": "Sir, we are approaching an asteroid belt.  Boosting [color=aqua]navigation[/color] should help us avoid collisions.  If any of those rocks hit us, our [color=#FFC000]hull[/color] is going to take some damage",
 		"helpingModule": MODULE_TYPE.NAVIGATION,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.HULL, "failText": "[color=red]ALERT[/color]: Asteroids strike the hull, damage = "}
 	},
 	1: {
-		"text": "The computer is showing inconsistencies in our life support system.  Boosting the computer can fix it, or else we risk damage to the life support system.",
+		"text": "The computer is showing inconsistencies in our life support system.  Boosting the [color=aqua]computer[/color] can fix it, or else we risk damage to the [color=#FFC000]life support[/color] system.",
 		"helpingModule": MODULE_TYPE.COMPUTER,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.LIFE_SUPPORT, "failText": "[color=red]ALERT[/color]: Life Support system failure, damage = "}
 	},
 	2: {
-		"text": "There's some debris buildup on the outside of the ship, which might affect our sensors.  One of the crew can go clean the hull to help, or else the sensors might take damage.",
+		"text": "There's some debris buildup on the outside of the ship, which might affect our sensors.  One of the crew can go clean the [color=aqua]hull[/color] to help, or else the [color=#FFC000]sensors[/color] might take damage.",
 		"helpingModule": MODULE_TYPE.HULL,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.SENSORS, "failText": "[color=red]ALERT[/color]: Sensors have failed, damage = "}
 	},
 	3: {
-		"text": "We're seeing some potential anomalies in the nav system.  More engine boost can recalibrate the bearings and prevent navigation problems.",
+		"text": "We're seeing some potential anomalies in the nav system.  More [color=aqua]engine[/color] boost can recalibrate the bearings and prevent [color=#FFC000]navigation[/color] problems.",
 		"helpingModule": MODULE_TYPE.ENGINE,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.NAVIGATION, "failText": "[color=red]ALERT[/color]: Damage to the navigation module, damage = "}
 	},
 	4: {
-		"text": "The engine is overheating and leaking CO2.  Boosting life support can help counteract the potential damage to the engine.",
+		"text": "The engine is overheating and leaking CO2.  Boosting [color=aqua]life support[/color] can help counteract the potential damage to the [color=#FFC000]engine[/color].",
 		"helpingModule": MODULE_TYPE.LIFE_SUPPORT,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.ENGINE, "failText": "[color=red]ALERT[/color]: Engine power decreased, damage = "}
 	},
 	5: {
-		"text": "Our computers are reporting a potential malfunction.  A crewmember can help find the root cause by boosting the sensors.",
+		"text": "Our [color=#FFC000]computers[/color] are reporting a potential malfunction.  A crewmember can help find the root cause by boosting the [color=aqua]sensors[/color].",
 		"helpingModule": MODULE_TYPE.SENSORS,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.COMPUTER, "failText": "[color=red]ALERT[/color]: Computer system failure, damage = "}
