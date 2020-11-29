@@ -45,10 +45,10 @@ const xpLevels = {
 }
 
 const possibleMoons = {
-	0: {"name": "Phobos", "distance": 48.3, "difficulty":"Easy", "moonID":0, "music":"Holst-Mars.wav"},
-	1: {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":1, "music":"Holst-Jupiter.wav"},
-	2: {"name": "Titan", "distance": 890.7, "difficulty":"Hard", "moonID":2, "music":"Holst-Saturn.wav"},
-	3: {"name": "Oberon", "distance": 1692.0, "difficulty":"Expert", "moonID":3, "music":"Holst-Uranus.wav"}
+	0: {"name": "Phobos", "distance": 48.3, "difficulty":"Easy", "moonID":0, "music":"Holst-Mars.ogg"},
+	1: {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":1, "music":"Holst-Jupiter.ogg"},
+	2: {"name": "Titan", "distance": 890.7, "difficulty":"Hard", "moonID":2, "music":"Holst-Saturn.ogg"},
+	3: {"name": "Oberon", "distance": 1692.0, "difficulty":"Expert", "moonID":3, "music":"Holst-Uranus.ogg"}
 }
 
 var roundNumber = 1

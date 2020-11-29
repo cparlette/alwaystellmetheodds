@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Holst-Mercury.ogg-cc74a8d71f9ed393fa021b4a62a636e6.oggstr"
+
+[deps]
+
+source_file="res://audio/Holst-Mercury.ogg"
+dest_files=[ "res://.import/Holst-Mercury.ogg-cc74a8d71f9ed393fa021b4a62a636e6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

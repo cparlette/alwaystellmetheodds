@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Holst-Neptune.ogg-b46b0827acac4601b224ec3e117b998b.oggstr"
+
+[deps]
+
+source_file="res://audio/Holst-Neptune.ogg"
+dest_files=[ "res://.import/Holst-Neptune.ogg-b46b0827acac4601b224ec3e117b998b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

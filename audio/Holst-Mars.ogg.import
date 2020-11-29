@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Holst-Mars.ogg-8cb410b49a6eef305b021d06e0e654ac.oggstr"
+
+[deps]
+
+source_file="res://audio/Holst-Mars.ogg"
+dest_files=[ "res://.import/Holst-Mars.ogg-8cb410b49a6eef305b021d06e0e654ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

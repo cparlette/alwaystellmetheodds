@@ -13,13 +13,13 @@ func _ready():
 		$Background.color = Color("5a7e3f")
 		newText += "You successfully made it to " + globals.destinationMoon['name'] + "!\n"
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
-		stream = load("res://audio/Holst-Venus.wav")
+		stream = load("res://audio/Holst-Venus.ogg")
 	else:
 		# lose
 		$Background.color = Color("826363")
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
 		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained\n"
-		stream = load("res://audio/Holst-Neptune.wav")
+		stream = load("res://audio/Holst-Neptune.ogg")
 	$AudioStreamPlayer.stream = stream
 	$AudioStreamPlayer.play()
 	newText += "Score: " + str(globals.score)

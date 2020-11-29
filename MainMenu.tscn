@@ -5,7 +5,7 @@
 [ext_resource path="res://graphics/titlescreen-v2.png" type="Texture" id=3]
 [ext_resource path="res://RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://font_14.tres" type="DynamicFont" id=5]
-[ext_resource path="res://audio/Holst-Mercury.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/Holst-Mercury.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
