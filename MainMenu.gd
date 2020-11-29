@@ -12,6 +12,11 @@ func _ready():
 		optionString += " - " + moon['difficulty']
 		$EnterNameMenu/MoonOption.add_item(optionString, moon['moonID'])
 	$EnterNameMenu/MoonOption.selected = 0
+	# get crew names from last game if they set them
+	$EnterNameMenu/CaptainName.text = globals.captainName
+	$EnterNameMenu/Crew1Name.text = globals.crew1Name
+	$EnterNameMenu/Crew2Name.text = globals.crew2Name
+	$EnterNameMenu/Crew3Name.text = globals.crew3Name
 	buildLeaderboard()
 
 func _input(event):

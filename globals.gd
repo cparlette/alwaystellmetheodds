@@ -71,7 +71,7 @@ func reinitializeGame():
 
 var randomEvents = {
 	0: {
-		"text": "Sir, we are approaching an asteroid belt.  Boosting [color=aqua]navigation[/color] should help us avoid collisions.  If any of those rocks hit us, our [color=#FFC000]hull[/color] is going to take some damage",
+		"text": "Captain, we are approaching an asteroid belt.  Boosting [color=aqua]navigation[/color] should help us avoid collisions.  If any of those rocks hit us, our [color=#FFC000]hull[/color] is going to take some damage",
 		"helpingModule": MODULE_TYPE.NAVIGATION,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.HULL, "failText": "[color=red]ALERT[/color]: Asteroids strike the hull, damage = "}
@@ -83,7 +83,7 @@ var randomEvents = {
 		"failure": {"moduleId": MODULE_TYPE.LIFE_SUPPORT, "failText": "[color=red]ALERT[/color]: Life Support system failure, damage = "}
 	},
 	2: {
-		"text": "There's some debris buildup on the outside of the ship, which might affect our sensors.  One of the crew can go clean the [color=aqua]hull[/color] to help, or else the [color=#FFC000]sensors[/color] might take damage.",
+		"text": "There's some debris buildup on the outside of the ship, which might affect our sensors.  One of the crew can go boost the [color=aqua]hull[/color] to help, or else the [color=#FFC000]sensors[/color] might take damage.",
 		"helpingModule": MODULE_TYPE.HULL,
 		"startingOdds": 40,
 		"failure": {"moduleId": MODULE_TYPE.SENSORS, "failText": "[color=red]ALERT[/color]: Sensors have failed, damage = "}

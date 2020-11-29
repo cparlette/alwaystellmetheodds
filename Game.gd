@@ -74,6 +74,10 @@ func newRound():
 	newText += globals.additionalOutputText
 	globals.additionalOutputText = ""
 	$NewRoundOutput/OutputText.bbcode_text = newText
+	
+	# Update the score
+	generateScore()
+	$CurrentScore.text = "Current score: "+str(globals.score)
 
 func resolveEvent():
 	var randomNumber = rng.randi_range(0,100)
@@ -98,7 +102,7 @@ func updateEventOutput():
 			var helpingModule = $Modules.get_child(currentEvent['helpingModule'])
 			currentEventOdds += helpingModule.boost
 			if $Modules/Sensors.health > 66:
-				newEventText += "Current Odds: " + str(currentEventOdds)
+				newEventText += "Current chances of avoiding damage this round: " + str(currentEventOdds)
 			else:
 				newEventText += "[color=yellow]WARNING[/color]: Current odds unavailable due to damaged sensors!"
 		$EventOutput/OutputText.bbcode_text = newEventText
@@ -106,6 +110,11 @@ func updateEventOutput():
 
 func gameOver():
 	# Generate a score
+	generateScore()
+	# Switch to the game over scene
+	get_tree().change_scene("GameOver.tscn")
+
+func generateScore():
 	var newScore = globals.distanceTraveled
 	for module in $Modules.get_children():
 		newScore += module.health
@@ -113,9 +122,6 @@ func gameOver():
 		for XPlevel in person.level:
 			newScore += (XPlevel * person.level[XPlevel])
 	globals.score = int(newScore)
-	# Switch to the game over scene
-	get_tree().change_scene("GameOver.tscn")
-
 
 func newCrewModuleAssigned():
 	for module in $Modules.get_children():

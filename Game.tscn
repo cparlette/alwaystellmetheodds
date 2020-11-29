@@ -87,7 +87,7 @@ margin_left = 590.0
 margin_top = 500.0
 margin_right = 690.0
 margin_bottom = 520.0
-text = "New Round"
+text = "Next Round"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -161,6 +161,17 @@ margin_top = 455.0
 margin_right = 715.0
 margin_bottom = 469.0
 text = "1%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentScore" type="Label" parent="."]
+margin_left = 565.0
+margin_top = 475.0
+margin_right = 715.0
+margin_bottom = 489.0
+text = "Current score: 0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
