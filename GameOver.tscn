@@ -105,6 +105,8 @@ margin_bottom = 98.0
 text = "Submit"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="LeaderboardEntry"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="LeaderboardEntry/NameSubmit" to="." method="_on_NameSubmit_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Holst-Venus.wav-b6e5278c442a8f9d2eee3706252cecdc.sample"
+
+[deps]
+
+source_file="res://audio/Holst-Venus.wav"
+dest_files=[ "res://.import/Holst-Venus.wav-b6e5278c442a8f9d2eee3706252cecdc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

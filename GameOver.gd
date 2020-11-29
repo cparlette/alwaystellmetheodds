@@ -6,17 +6,22 @@ var victory = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var newText = str(globals.roundNumber) + " rounds completed\n"
+	var stream = ""
 	if globals.distanceTraveled >= globals.destinationMoon['distance']:
 		# win
 		victory = 1
 		$Background.color = Color("5a7e3f")
 		newText += "You successfully made it to " + globals.destinationMoon['name'] + "!\n"
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
+		stream = load("res://audio/Holst-Venus.wav")
 	else:
 		# lose
 		$Background.color = Color("826363")
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
 		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained\n"
+		stream = load("res://audio/Holst-Neptune.wav")
+	$AudioStreamPlayer.stream = stream
+	$AudioStreamPlayer.play()
 	newText += "Score: " + str(globals.score)
 	$ScoreText.text = newText
 	

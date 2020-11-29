@@ -26,6 +26,9 @@ func _ready():
 	initialText += " million miles, the computer reads a 1% overall success rate.\n\n"
 	initialText += "Time to assign the crew to their initial tasks and start the journey."
 	$NewRoundOutput/OutputText.bbcode_text = initialText
+	var stream = load("res://audio/"+globals.destinationMoon['music'])
+	$AudioStreamPlayer.stream = stream
+	$AudioStreamPlayer.play()
 
 
 func _input(event):

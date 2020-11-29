@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/space-v1.png" type="Texture" id=2]
 [ext_resource path="res://graphics/titlescreen-v2.png" type="Texture" id=3]
 [ext_resource path="res://RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://font_14.tres" type="DynamicFont" id=5]
+[ext_resource path="res://audio/Holst-Mercury.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -518,10 +519,16 @@ margin_bottom = 400.0
 window_title = "About"
 dialog_text = "Always Tell Me The Odds: A space survival game by Chris Parlette
 
-All programming, assets, sound, music, and graphics are original by Chris Parlette.
+All programming, assets, sound, and graphics are original by Chris Parlette.
+
+Background music is The Planets suite by Gustav Holst, which is in the public domain.  MIDI files were downloaded from http://www.aquarianage.org/lore/holst.html .
 
 This was originally made for the Github Game Off 2020 game jam, where the theme of the jam was 'moonshot'."
 dialog_autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 [connection signal="pressed" from="NewGameMenu/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="NewGameMenu/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="NewGameMenu/HowToPlay" to="." method="_on_HowToPlay_pressed"]
