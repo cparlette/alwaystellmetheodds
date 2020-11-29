@@ -55,7 +55,14 @@ func updateCrewUI():
 	newCrewUItext += "LIFE: " + str(level[3]) + "\n"
 	newCrewUItext += "HULL: " + str(level[4]) + "\n"
 	newCrewUItext += "SEN: " + str(level[5]) + "\n"
-	$XPLevel.text = newCrewUItext
+	# uncomment this to display just numbers
+	#$XPLevel.text = newCrewUItext
+	$EngBar.value = level[0]
+	$NavBar.value = level[1]
+	$ComBar.value = level[2]
+	$LifeBar.value = level[3]
+	$HulBar.value = level[4]
+	$SenBar.value = level[5]
 
 func getLevel(moduleID):
 	return level[moduleID]

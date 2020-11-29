@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Crew.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.12549, 0.682353, 0.109804, 1 )
 
 [node name="Crew" type="Control"]
 margin_right = 250.0
@@ -49,13 +52,72 @@ selected = 0
 
 [node name="XPLevel" type="Label" parent="."]
 margin_left = 170.0
-margin_right = 240.0
+margin_right = 209.0
 margin_bottom = 100.0
-text = "ENG: 0
-NAV: 0
-COMP: 0
-LIFE: 0
-HULL: 0
-SEN: 0"
+text = "ENG: 
+NAV: 
+COM: 
+LIFE: 
+HUL: 
+SEN: "
+
+[node name="EngBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_right = 248.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
+[node name="NavBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_top = 16.0
+margin_right = 248.0
+margin_bottom = 30.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
+[node name="ComBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_top = 33.0
+margin_right = 248.0
+margin_bottom = 47.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
+[node name="LifeBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_top = 50.0
+margin_right = 248.0
+margin_bottom = 64.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
+[node name="HulBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_top = 66.0
+margin_right = 248.0
+margin_bottom = 80.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
+[node name="SenBar" type="ProgressBar" parent="."]
+margin_left = 208.0
+margin_top = 83.0
+margin_right = 248.0
+margin_bottom = 97.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
 [connection signal="item_selected" from="TaskOption" to="." method="_on_TaskOption_item_selected"]
