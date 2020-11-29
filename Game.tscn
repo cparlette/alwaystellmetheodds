@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Module.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/space-v1.png" type="Texture" id=3]
 [ext_resource path="res://Crew.tscn" type="PackedScene" id=4]
 [ext_resource path="res://graphics/titlescreen-v2.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0705882, 0.376471, 0.698039, 1 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -117,6 +120,14 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 bbcode_enabled = true
+
+[node name="ProgressBar" type="ProgressBar" parent="NewRoundOutput"]
+visible = false
+margin_left = 180.0
+margin_top = 5.0
+margin_right = 380.0
+margin_bottom = 19.0
+custom_styles/fg = SubResource( 1 )
 
 [node name="EventOutput" type="Control" parent="."]
 margin_left = 440.0

@@ -29,6 +29,8 @@ func _ready():
 	var stream = load("res://audio/"+globals.destinationMoon['music'])
 	$AudioStreamPlayer.stream = stream
 	$AudioStreamPlayer.play()
+	$NewRoundOutput/ProgressBar.max_value = globals.destinationMoon['distance']
+	$NewRoundOutput/ProgressBar.visible = false
 
 
 func _input(event):
@@ -59,6 +61,8 @@ func newRound():
 				module.health = 100
 		module.updateModuleUI()
 	calculateSurvivalOdds()
+	$NewRoundOutput/ProgressBar.visible = true
+	$NewRoundOutput/ProgressBar.value = globals.distanceTraveled
 	
 	# Add xp to crew
 	for person in $Crew.get_children():
