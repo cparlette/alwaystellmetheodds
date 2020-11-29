@@ -208,16 +208,16 @@ __meta__ = {
 }
 
 [node name="StartGameButton" type="Button" parent="EnterNameMenu"]
-margin_left = 100.0
+margin_left = 250.0
 margin_top = 200.0
-margin_right = 150.0
+margin_right = 300.0
 margin_bottom = 220.0
 text = "Start"
 
 [node name="BackButton" type="Button" parent="EnterNameMenu"]
-margin_left = 250.0
+margin_left = 100.0
 margin_top = 200.0
-margin_right = 300.0
+margin_right = 150.0
 margin_bottom = 220.0
 text = "Back"
 __meta__ = {
