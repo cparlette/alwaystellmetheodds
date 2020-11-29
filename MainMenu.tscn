@@ -42,9 +42,9 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="NewGameMenu"]
-margin_left = 590.0
+margin_left = 580.0
 margin_top = 150.0
-margin_right = 690.0
+margin_right = 700.0
 margin_bottom = 175.0
 custom_fonts/font = ExtResource( 5 )
 text = "New Game"
@@ -53,9 +53,9 @@ __meta__ = {
 }
 
 [node name="Leaderboard" type="Button" parent="NewGameMenu"]
-margin_left = 590.0
+margin_left = 580.0
 margin_top = 185.0
-margin_right = 690.0
+margin_right = 700.0
 margin_bottom = 210.0
 custom_fonts/font = ExtResource( 5 )
 text = "Leaderboard"
@@ -64,9 +64,9 @@ __meta__ = {
 }
 
 [node name="HowToPlay" type="Button" parent="NewGameMenu"]
-margin_left = 590.0
+margin_left = 580.0
 margin_top = 220.0
-margin_right = 690.0
+margin_right = 700.0
 margin_bottom = 245.0
 custom_fonts/font = ExtResource( 5 )
 text = "How To Play"
@@ -75,9 +75,9 @@ __meta__ = {
 }
 
 [node name="About" type="Button" parent="NewGameMenu"]
-margin_left = 590.0
+margin_left = 580.0
 margin_top = 255.0
-margin_right = 690.0
+margin_right = 700.0
 margin_bottom = 280.0
 custom_fonts/font = ExtResource( 5 )
 text = "About"
@@ -86,9 +86,9 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="NewGameMenu"]
-margin_left = 590.0
+margin_left = 580.0
 margin_top = 290.0
-margin_right = 690.0
+margin_right = 700.0
 margin_bottom = 315.0
 custom_fonts/font = ExtResource( 5 )
 text = "Quit"
