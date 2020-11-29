@@ -25,9 +25,9 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="."]
-margin_left = 50.0
+margin_left = 10.0
 margin_top = 10.0
-margin_right = 150.0
+margin_right = 160.0
 margin_bottom = 24.0
 text = "Crew Name"
 align = 1
