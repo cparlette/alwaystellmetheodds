@@ -33,11 +33,12 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("MainMenu.tscn")
+		$QuitMenuPopup.visible = true
 
 
 func _on_NewRoundButton_pressed():
-	newRound()
+	if $QuitMenuPopup.visible == false:
+		newRound()
 
 func newRound():
 	var newText = "Starting round " + str(globals.roundNumber) + "\n\n"
@@ -157,3 +158,11 @@ func calculateSurvivalOdds():
 		newOdds = globals.distanceTraveled * 100.0 / globals.destinationMoon['distance']
 	newOdds = newOdds * (float($"Modules/Hull".health) / 100.0)
 	$OddsNumber.text = str(newOdds)+"%"
+
+
+func _on_MainMenuButton_pressed():
+	get_tree().change_scene("MainMenu.tscn")
+
+
+func _on_BackToGameButton_pressed():
+	$QuitMenuPopup.visible = false
