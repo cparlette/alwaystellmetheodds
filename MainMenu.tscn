@@ -502,11 +502,11 @@ Ganymede - The largest moon orbiting Jupiter
 Titan - The largest moon orbiting Saturn
 Oberon - The second largest  moon orbiting Uranus
 
-You have 3 crew members on your team.  Each can be assigned to one of the 6 modules on your spacecraft, and can either be assigned to boost that module or repair it.  As you travel along, various events will occur that have a chance of causing damage to one of the modules.  Boosting one of the other modules will help prevent damage.
+You have 3 crew members on your team.  Each can be assigned to one of the 6 modules on your spacecraft, and can either be assigned to boost that module or repair it.  As you travel along, various events will occur that have a chance of causing damage to one of the modules.  Boosting the module in blue text  will help prevent damage to the module in yellow text..
 
 Your crew members will gain experience each round based on which module they are assigned to.  This experience will increase their level, causing more boost or repair as they become more advanced.
 
-If your hull health drops to 0%, your ship explodes and your mission is a failure.
+Boost the engine to increase your distance traveled each round.  Damage to the Life Support system will reduce the efficiency of your crew.  If any module health drops to 0%, your ship explodes and your mission is a failure.
 
 Good luck!"
 dialog_autowrap = true
