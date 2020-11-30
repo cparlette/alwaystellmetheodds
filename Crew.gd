@@ -59,11 +59,17 @@ func updateCrewUI():
 	# uncomment this to display just numbers
 	#$XPLevel.text = newCrewUItext
 	$EngBar.value = level[0]
+	$EngBar.hint_tooltip = "Engine Level "+str(level[0])
 	$NavBar.value = level[1]
+	$NavBar.hint_tooltip = "Navigation Level "+str(level[1])
 	$ComBar.value = level[2]
+	$ComBar.hint_tooltip = "Computers Level "+str(level[2])
 	$LifeBar.value = level[3]
+	$LifeBar.hint_tooltip = "Life Support Level "+str(level[3])
 	$HulBar.value = level[4]
+	$HulBar.hint_tooltip = "Hull Level "+str(level[4])
 	$SenBar.value = level[5]
+	$SenBar.hint_tooltip = "Sensors Level "+str(level[5])
 
 func getLevel(moduleID):
 	return level[moduleID]

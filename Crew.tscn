@@ -31,6 +31,9 @@ margin_right = 160.0
 margin_bottom = 24.0
 text = "Crew Name"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ModuleOption" type="OptionButton" parent="."]
 margin_left = 10.0
