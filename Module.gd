@@ -59,6 +59,7 @@ func causeDamage(damageAmount):
 	updateModuleUI()
 	shakeTween()
 	if health <= 0:
+		globals.reasonForLoss = "Your "+moduleName+" module exploded!"
 		emit_signal("game_over")
 
 func shakeTween():

@@ -17,6 +17,7 @@ func _ready():
 	else:
 		# lose
 		$Background.color = Color("826363")
+		newText += globals.reasonForLoss + "\n"
 		newText += str(globals.distanceTraveled) +  " million miles traveled\n"
 		newText += str(globals.destinationMoon['distance'] - globals.distanceTraveled) + " million miles remained\n"
 		stream = load("res://audio/Holst-Neptune.ogg")

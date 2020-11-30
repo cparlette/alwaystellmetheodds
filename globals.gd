@@ -56,6 +56,7 @@ var distanceTraveled = 0
 var score = 0
 var destinationMoon = {"name": "Ganymede", "distance": 390.4, "difficulty":"Medium", "moonID":1}
 var additionalOutputText = ""
+var reasonForLoss = ""
 
 var captainName = "Captain"
 var crew1Name = "Ann"
@@ -67,6 +68,7 @@ func reinitializeGame():
 	distanceTraveled = 0
 	additionalOutputText = ""
 	score = 0
+	reasonForLoss = ""
 	
 
 var randomEvents = {
