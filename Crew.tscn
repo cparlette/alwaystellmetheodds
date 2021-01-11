@@ -1,16 +1,72 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Crew.gd" type="Script" id=1]
+[ext_resource path="res://font-arial-14.tres" type="DynamicFont" id=2]
+[ext_resource path="res://font-arial-18.tres" type="DynamicFont" id=3]
+[ext_resource path="res://graphics/Icons/sensor.svg" type="Texture" id=4]
+[ext_resource path="res://graphics/Icons/hull.svg" type="Texture" id=5]
+[ext_resource path="res://graphics/Icons/engine.svg" type="Texture" id=6]
+[ext_resource path="res://graphics/Icons/Computer.svg" type="Texture" id=7]
+[ext_resource path="res://graphics/Icons/Navigation.svg" type="Texture" id=8]
+[ext_resource path="res://graphics/Icons/lifesupport.svg" type="Texture" id=9]
+[ext_resource path="res://graphics/Icons/BoostSelected.png" type="Texture" id=10]
+[ext_resource path="res://graphics/Icons/Booshover.png" type="Texture" id=11]
+[ext_resource path="res://graphics/Icons/boostunselected.png" type="Texture" id=12]
+[ext_resource path="res://graphics/Icons/repairselected.png" type="Texture" id=13]
+[ext_resource path="res://graphics/Icons/repairunselected.png" type="Texture" id=14]
+[ext_resource path="res://graphics/Icons/repairhover.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.12549, 0.682353, 0.109804, 1 )
+bg_color = Color( 0.14902, 0.662745, 0.878431, 1 )
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="ImageTexture" id=7]
+
+[sub_resource type="ImageTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 281, 130 )
 
 [sub_resource type="ButtonGroup" id=2]
 resource_name = "tasks"
 
+[sub_resource type="ImageTexture" id=10]
+
+[sub_resource type="ImageTexture" id=11]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 281, 130 )
+
 [node name="Crew" type="Control"]
-margin_right = 250.0
-margin_bottom = 100.0
+margin_right = 435.0
+margin_bottom = 130.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,16 +75,17 @@ __meta__ = {
 [node name="CrewBG" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.219608, 0.223529, 0.2, 1 )
+color = Color( 0.0941176, 0.0941176, 0.156863, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NameLabel" type="Label" parent="."]
-margin_left = 10.0
+margin_left = 120.0
 margin_top = 10.0
-margin_right = 160.0
-margin_bottom = 24.0
+margin_right = 255.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
 text = "Crew Name"
 align = 1
 __meta__ = {
@@ -36,115 +93,169 @@ __meta__ = {
 }
 
 [node name="ModuleOption" type="OptionButton" parent="."]
-margin_left = 10.0
+margin_left = 120.0
 margin_top = 40.0
-margin_right = 160.0
-margin_bottom = 60.0
+margin_right = 255.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
 text = "Engine"
-items = [ "Engine", null, false, 0, null, "Navigation", null, false, 1, null, "Computer", null, false, 2, null, "Life Support", null, false, 3, null, "Hull", null, false, 4, null, "Sensors", null, false, 5, null ]
+icon = ExtResource( 6 )
+items = [ "Engine", ExtResource( 6 ), false, 0, null, "Navigation", ExtResource( 8 ), false, 1, null, "Computer", ExtResource( 7 ), false, 2, null, "Life Support", ExtResource( 9 ), false, 3, null, "Hull", ExtResource( 5 ), false, 4, null, "Sensors", ExtResource( 4 ), false, 5, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="XPIcons" type="Node2D" parent="."]
+
+[node name="EngIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 10 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="NavIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 29 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="ComIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 48 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="LifeIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 67 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="HullIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 86 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="SenIcon" type="Sprite" parent="XPIcons"]
+position = Vector2( 275, 105 )
+texture = ExtResource( 4 )
+centered = false
+
 [node name="XPLevel" type="Label" parent="."]
-margin_left = 170.0
-margin_right = 209.0
-margin_bottom = 100.0
+margin_left = 295.0
+margin_top = 10.0
+margin_right = 336.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 2 )
 text = "ENG: 
 NAV: 
 COM: 
 LIFE: 
 HUL: 
 SEN: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XPNumber" type="RichTextLabel" parent="."]
+margin_left = 340.0
+margin_top = 10.0
+margin_right = 355.0
+margin_bottom = 121.0
+custom_fonts/normal_font = ExtResource( 2 )
+custom_constants/line_separation = 3
+bbcode_enabled = true
+scroll_active = false
 
 [node name="EngBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_right = 248.0
-margin_bottom = 14.0
+margin_left = 355.0
+margin_top = 10.0
+margin_right = 425.0
+margin_bottom = 24.0
 custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
 
 [node name="NavBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_top = 16.0
-margin_right = 248.0
-margin_bottom = 30.0
+margin_left = 355.0
+margin_top = 29.0
+margin_right = 425.0
+margin_bottom = 43.0
 custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
 
 [node name="ComBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_top = 33.0
-margin_right = 248.0
-margin_bottom = 47.0
+margin_left = 355.0
+margin_top = 48.0
+margin_right = 425.0
+margin_bottom = 62.0
 custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
 
 [node name="LifeBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_top = 50.0
-margin_right = 248.0
-margin_bottom = 64.0
+margin_left = 355.0
+margin_top = 67.0
+margin_right = 425.0
+margin_bottom = 81.0
 custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
 
 [node name="HulBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_top = 66.0
-margin_right = 248.0
-margin_bottom = 80.0
+margin_left = 355.0
+margin_top = 86.0
+margin_right = 425.0
+margin_bottom = 100.0
 custom_styles/fg = SubResource( 1 )
 max_value = 12.0
 step = 1.0
 percent_visible = false
-
-[node name="SenBar" type="ProgressBar" parent="."]
-margin_left = 208.0
-margin_top = 83.0
-margin_right = 248.0
-margin_bottom = 97.0
-custom_styles/fg = SubResource( 1 )
-max_value = 12.0
-step = 1.0
-percent_visible = false
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 10.0
-margin_top = 70.0
-margin_right = 160.0
-margin_bottom = 94.0
-color = Color( 0, 0, 0, 0.290196 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SenBar" type="ProgressBar" parent="."]
+margin_left = 355.0
+margin_top = 105.0
+margin_right = 425.0
+margin_bottom = 119.0
+custom_styles/fg = SubResource( 1 )
+max_value = 12.0
+step = 1.0
+percent_visible = false
+
 [node name="BoostCheck" type="CheckBox" parent="."]
-margin_left = 10.0
-margin_top = 70.0
-margin_right = 75.0
-margin_bottom = 94.0
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 185.0
+margin_bottom = 115.0
+theme = SubResource( 3 )
+custom_icons/radio_checked = SubResource( 7 )
+custom_icons/radio_unchecked = SubResource( 8 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/hover_pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 6 )
 group = SubResource( 2 )
-text = "Boost"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RepairCheck" type="CheckBox" parent="."]
-margin_left = 90.0
-margin_top = 70.0
-margin_right = 160.0
-margin_bottom = 94.0
+margin_left = 190.0
+margin_top = 80.0
+margin_right = 255.0
+margin_bottom = 115.0
+custom_icons/radio_checked = SubResource( 10 )
+custom_icons/radio_unchecked = SubResource( 11 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/hover_pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
 group = SubResource( 2 )
-text = "Repair"
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
 [connection signal="toggled" from="BoostCheck" to="." method="_on_BoostCheck_toggled"]
 [connection signal="toggled" from="RepairCheck" to="." method="_on_RepairCheck_toggled"]

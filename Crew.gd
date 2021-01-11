@@ -58,6 +58,15 @@ func updateCrewUI():
 	newCrewUItext += "SEN: " + str(level[5]) + "\n"
 	# uncomment this to display just numbers
 	#$XPLevel.text = newCrewUItext
+	
+	var newXPnumberText = ""
+	for i in level:
+		if level[i] == 0:
+			newXPnumberText += "[color=#000000]0[/color]\n"
+		else:
+			newXPnumberText += "[color=#26A9E0]"+str(level[i])+"[/color]\n"
+	$XPNumber.bbcode_text = newXPnumberText
+	
 	$EngBar.value = level[0]
 	$EngBar.hint_tooltip = "Engine Level "+str(level[0])
 	$NavBar.value = level[1]

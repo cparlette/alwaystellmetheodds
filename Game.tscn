@@ -60,29 +60,45 @@ margin_right = 305.0
 margin_bottom = 310.0
 type = 5
 
+[node name="CrewBG" type="ColorRect" parent="."]
+margin_top = 260.0
+margin_right = 470.0
+margin_bottom = 720.0
+color = Color( 0.254902, 0.329412, 0.509804, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Crew" type="Control" parent="."]
-margin_left = 150.0
-margin_top = 370.0
-margin_right = 400.0
-margin_bottom = 680.0
+margin_top = 260.0
+margin_right = 470.0
+margin_bottom = 720.0
 rect_min_size = Vector2( 250, 210 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ann" parent="Crew" instance=ExtResource( 4 )]
-rect_min_size = Vector2( 250, 100 )
+margin_left = 17.0
+margin_top = 33.0
+margin_right = 452.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 435, 130 )
 
 [node name="Bob" parent="Crew" instance=ExtResource( 4 )]
-margin_top = 105.0
-margin_bottom = 205.0
-rect_min_size = Vector2( 250, 100 )
+margin_left = 17.0
+margin_top = 173.0
+margin_right = 452.0
+margin_bottom = 303.0
+rect_min_size = Vector2( 435, 130 )
 crewNameInput = 1
 
 [node name="Chad" parent="Crew" instance=ExtResource( 4 )]
-margin_top = 210.0
-margin_bottom = 310.0
-rect_min_size = Vector2( 250, 100 )
+margin_left = 17.0
+margin_top = 313.0
+margin_right = 452.0
+margin_bottom = 443.0
+rect_min_size = Vector2( 435, 130 )
 crewNameInput = 2
 
 [node name="NewRoundButton" type="Button" parent="."]
@@ -154,6 +170,9 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OddsLabel" type="Label" parent="."]
 margin_left = 565.0

@@ -71,28 +71,31 @@ func buildLeaderboard():
 	$Leaderboard/HTTPRequest.request(getLeaderboardAPI)
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	var json = parse_json(body.get_string_from_utf8())
-	var phobos = []
-	var ganymede = []
-	var titan = []
-	var oberon = []
-	for entry in json:
-		if entry['moon'] == "Phobos":
-			phobos.append(entry)
-		elif entry['moon'] == "Ganymede":
-			ganymede.append(entry)
-		elif entry['moon'] == "Titan":
-			titan.append(entry)
-		elif entry['moon'] == "Oberon":
-			oberon.append(entry)
-	phobos.sort_custom(MyCustomSorter, "customComparison")
-	ganymede.sort_custom(MyCustomSorter, "customComparison")
-	titan.sort_custom(MyCustomSorter, "customComparison")
-	oberon.sort_custom(MyCustomSorter, "customComparison")
-	displayScores(phobos, $Leaderboard/TabContainer/Phobos)
-	displayScores(ganymede, $Leaderboard/TabContainer/Ganymede)
-	displayScores(titan, $Leaderboard/TabContainer/Titan)
-	displayScores(oberon, $Leaderboard/TabContainer/Oberon)
+	if response_code == 200:
+		var json = parse_json(body.get_string_from_utf8())
+		var phobos = []
+		var ganymede = []
+		var titan = []
+		var oberon = []
+		for entry in json:
+			if entry['moon'] == "Phobos":
+				phobos.append(entry)
+			elif entry['moon'] == "Ganymede":
+				ganymede.append(entry)
+			elif entry['moon'] == "Titan":
+				titan.append(entry)
+			elif entry['moon'] == "Oberon":
+				oberon.append(entry)
+		phobos.sort_custom(MyCustomSorter, "customComparison")
+		ganymede.sort_custom(MyCustomSorter, "customComparison")
+		titan.sort_custom(MyCustomSorter, "customComparison")
+		oberon.sort_custom(MyCustomSorter, "customComparison")
+		displayScores(phobos, $Leaderboard/TabContainer/Phobos)
+		displayScores(ganymede, $Leaderboard/TabContainer/Ganymede)
+		displayScores(titan, $Leaderboard/TabContainer/Titan)
+		displayScores(oberon, $Leaderboard/TabContainer/Oberon)
+	else:
+		print(response_code)
 
 func displayScores(scoreList, hbox):
 	var maxEntriesToShow = 25
