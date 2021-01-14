@@ -62,7 +62,7 @@ func updateCrewUI():
 	var newXPnumberText = ""
 	for i in level:
 		if level[i] == 0:
-			newXPnumberText += "[color=#000000]0[/color]\n"
+			newXPnumberText += "[color=#02020C]0[/color]\n"
 		else:
 			newXPnumberText += "[color=#26A9E0]"+str(level[i])+"[/color]\n"
 	$XPNumber.bbcode_text = newXPnumberText
