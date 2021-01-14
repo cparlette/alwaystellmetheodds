@@ -19,30 +19,29 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.14902, 0.662745, 0.878431, 1 )
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=2]
 
-[sub_resource type="ImageTexture" id=7]
+[sub_resource type="ImageTexture" id=3]
 
-[sub_resource type="ImageTexture" id=8]
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 276, 126 )
+[sub_resource type="ImageTexture" id=4]
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 276, 126 )
-
-[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 276, 126 )
 
 [sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 276, 126 )
+
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 281, 130 )
 
-[sub_resource type="ButtonGroup" id=2]
-resource_name = "tasks"
+[sub_resource type="ButtonGroup" id=9]
 
 [sub_resource type="ImageTexture" id=10]
 
@@ -230,32 +229,32 @@ percent_visible = false
 [node name="BoostCheck" type="CheckBox" parent="."]
 margin_left = 120.0
 margin_top = 80.0
-margin_right = 185.0
-margin_bottom = 115.0
-theme = SubResource( 3 )
-custom_icons/radio_checked = SubResource( 7 )
-custom_icons/radio_unchecked = SubResource( 8 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/hover_pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 6 )
-group = SubResource( 2 )
+margin_right = 186.0
+margin_bottom = 110.0
+theme = SubResource( 2 )
+custom_icons/radio_checked = SubResource( 3 )
+custom_icons/radio_unchecked = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/hover_pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+group = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RepairCheck" type="CheckBox" parent="."]
-margin_left = 190.0
+margin_left = 189.0
 margin_top = 80.0
 margin_right = 255.0
-margin_bottom = 115.0
+margin_bottom = 110.0
 custom_icons/radio_checked = SubResource( 10 )
 custom_icons/radio_unchecked = SubResource( 11 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
 custom_styles/hover_pressed = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
-group = SubResource( 2 )
+group = SubResource( 9 )
 [connection signal="item_selected" from="ModuleOption" to="." method="_on_ModuleOption_item_selected"]
 [connection signal="toggled" from="BoostCheck" to="." method="_on_BoostCheck_toggled"]
 [connection signal="toggled" from="RepairCheck" to="." method="_on_RepairCheck_toggled"]
